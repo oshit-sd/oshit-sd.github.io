@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="assets/images/oshit.png">
+    <title>OSHIT SUTRADAR</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,800%7COpen+Sans:400,400i,700"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="assets/css/frontend.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div class="container-fluid">
+            <div class="row no-gutters v-full">
+                <div id="left-wrapper" class="col-12 col-lg-8">
+
+                    <div id="about" class="main-content">
+                        <!-- Close Button Starts -->
+                        <a href="index.html" class="close-menu-link">
+                            <i class="close-button fas fa-home fa-2x"></i>
+                        </a>
+                        <!-- Close Button Ends -->
+                        <!-- Content Hanging On About Section Starts -->
+                        <div class="hanging">
+                            <div id="logo-hanging"></div>
+
+                            <div class="text-hanging">
+                                <div class="word">
+                                    <h6>
+                                        ABOUT <span>ME</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Content Hanging On About Section Ends -->
+
+                        <!-- Inner Content Starts -->
+                        <div class="inner-content" v-if="!$root.spineer">
+                            <!-- Head Content Starts -->
+                            <div class="head-content head-content2">
+                                <h3>
+                                    About
+                                    <span>Me</span>
+                                </h3>
+                            </div>
+                            <!-- Head Content Ends -->
+                            <!-- Content Starts -->
+                            <div class="content">
+                                <!-- Personal Info Starts -->
+                                <div id="personal-info">
+                                    <!-- Personal Info Heading Starts -->
+                                    <h5>Personal Info</h5>
+                                    <!-- Personal Info Heading Ends -->
+                                    <div class="row no-gutters">
+                                        <!-- Profile Picture Starts -->
+                                        <div class="profile-picture col-md-2 col-sm-3 col-12"></div>
+                                        <!-- Profile Picture Ends -->
+                                        <!-- Summary Starts -->
+                                        <div class="summary col-md-12 col-sm-9 col-12">
+                                            <!-- Slider Starts-->
+                                            <Slider v-if="datas.data.sliders" />
+                                            <!-- end Slider  -->
+
+                                            <!-- Single Paragraph Starts -->
+                                            <div v-if="datas.data.about" v-html="datas.data.about.description"></div>
+                                            <!-- Single Paragraph Ends -->
+                                        </div>
+                                        <!-- Summary Ends -->
+                                        <!-- Single Profile Starts -->
+                                        <div class="profile col-12 col-sm-6">
+                                            <ul>
+                                                <!-- Single Content On Profile Starts -->
+                                                <li>
+                                                    <span class="label">
+                                                        <i class="fas fa-angle-double-right"></i>
+                                                        <span>First Name</span>
+                                                    </span>
+                                                    <span class="dash">-</span>
+                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.name
+                                                        }}</span>
+                                                </li>
+                                                <!-- Single Content On Profile Ends -->
+                                                <!-- Single Content On Profile Starts -->
+                                                <li>
+                                                    <span class="label">
+                                                        <i class="fas fa-angle-double-right"></i>
+                                                        <span>Date of Birth</span>
+                                                    </span>
+                                                    <span class="dash">-</span>
+                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.dob
+                                                        }}</span>
+                                                </li>
+                                                <!-- Single Content On Profile Ends -->
+                                                <!-- Single Content On Profile Starts -->
+                                                <li>
+                                                    <span class="label">
+                                                        <i class="fas fa-angle-double-right"></i>
+                                                        <span>Nationality</span>
+                                                    </span>
+                                                    <span class="dash">-</span>
+                                                    <span class="value">Bangladeshi</span>
+                                                </li>
+                                                <!-- Single Content On Profile Ends -->
+                                                <!-- Single Content On Profile Starts -->
+                                                <li>
+                                                    <span class="label">
+                                                        <i class="fas fa-angle-double-right"></i>
+                                                        <span>Mobile One</span>
+                                                    </span>
+                                                    <span class="dash">-</span>
+                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.mobile1
+                                                        }}</span>
+                                                </li>
+                                                <li>
+                                                    <span class="label">
+                                                        <i class="fas fa-angle-double-right"></i>
+                                                        <span>Mobile Two</span>
+                                                    </span>
+                                                    <span class="dash">-</span>
+                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.mobile2
+                                                        }}</span>
+                                                </li>
+                                                <!-- Single Content On Profile Ends -->
+                                            </ul>
+                                        </div>
+                                        <!-- Single Profile Ends -->
+                                        <!-- Single Profile Starts -->
+                                        <div class="profile col-12 col-sm-6">
+                                            <ul>
+                                                <!-- Single Content On Profile Starts -->
+                                                <li>
+                                                    <span class="label">
+                                                        <i class="fas fa-angle-double-right"></i>
+                                                        <span>Email One</span>
+                                                    </span>
+                                                    <span class="dash">-</span>
+                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.email1
+                                                        }}</span>
+                                                </li>
+                                                <li>
+                                                    <span class="label">
+                                                        <i class="fas fa-angle-double-right"></i>
+                                                        <span>Email Two</span>
+                                                    </span>
+                                                    <span class="dash">-</span>
+                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.email2
+                                                        }}</span>
+                                                </li>
+                                                <!-- Single Content On Profile Ends -->
+                                                <!-- Single Content On Profile Starts -->
+                                                <li>
+                                                    <span class="label">
+                                                        <i class="fas fa-angle-double-right"></i>
+                                                        <span>Languages</span>
+                                                    </span>
+                                                    <span class="dash">-</span>
+                                                    <span class="value">English (basic), Bangla</span>
+                                                </li>
+                                                <!-- Single Content On Profile Ends -->
+                                                <!-- Single Content On Profile Starts -->
+                                                <li>
+                                                    <span class="label">
+                                                        <i class="fas fa-angle-double-right"></i>
+                                                        <span>Address</span>
+                                                    </span>
+                                                    <span class="dash">-</span>
+                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.address
+                                                        }}</span>
+                                                </li>
+                                                <!-- Single Content On Profile Ends -->
+                                            </ul>
+                                        </div>
+                                        <!-- Single Profile Ends -->
+                                        <!-- Social Media Starts -->
+                                        <div class="social-media col-12">
+                                            <ul>
+                                                <!-- Single Social Media Starts -->
+                                                <li v-if="datas.data.config">
+                                                    <a :href="datas.data.config.fb_url" target="_blank">
+                                                        <span class="front">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                        </span>
+                                                        <span class="back">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <!-- Single Social Media Ends -->
+                                                <!-- Single Social Media Starts -->
+                                                <li v-if="datas.data.config">
+                                                    <a :href="datas.data.config.gh_link" target="_blank">
+                                                        <span class="front">
+                                                            <i class="fab fa-github"></i>
+                                                        </span>
+                                                        <span class="back">
+                                                            <i class="fab fa-github"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <!-- Single Social Media Ends -->
+                                                <!-- Single Social Media Starts -->
+                                                <li v-if="datas.data.config">
+                                                    <a :href="datas.data.config.in_link" target="_blank">
+                                                        <span class="front">
+                                                            <i class="fab fa-linkedin-in"></i>
+                                                        </span>
+                                                        <span class="back">
+                                                            <i class="fab fa-linkedin-in"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <!-- Single Social Media Ends -->
+                                            </ul>
+                                        </div>
+                                        <!-- Social Media Ends -->
+                                        <!-- Button Wrapper Starts -->
+                                        <div class="button-wrapper col-12">
+                                            <!-- Single Button Starts -->
+                                            <div class="single-button" v-if="datas.data.cv">
+                                                <a :href="datas.data.cv.cv" download>
+                                                    <span class="front">
+                                                        <i class="fas fa-file-pdf"></i>
+                                                        <span class="value">
+                                                            Download
+                                                            <span>CV</span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="back">
+                                                        <i class="fas fa-file-pdf"></i>
+                                                        <span class="value">
+                                                            Download
+                                                            <span>CV</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <!-- Single Button Ends -->
+                                            <!-- Single Button Starts -->
+                                            <div class="single-button" id="contact-me">
+                                                <a :to="{name:'home.contactMe'}" class="page-load" id="contact-button">
+                                                    <span class="front">
+                                                        <i class="fas fa-envelope"></i>
+                                                        <span class="value">
+                                                            Contact
+                                                            <span>Me</span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="back">
+                                                        <i class="fas fa-envelope"></i>
+                                                        <span class="value">
+                                                            Contact
+                                                            <span>Me</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <!-- Single Button Ends -->
+                                        </div>
+                                        <!-- Button Wrapper Ends -->
+                                    </div>
+                                </div>
+                                <!-- Personal Info Ends -->
+                                <!-- Services Starts -->
+                                <div id="services">
+                                    <!-- Services Heading Starts -->
+                                    <h5>Education / Course</h5>
+                                    <!-- Services Heading Ends -->
+                                    <div class="row no-gutters" v-if="datas.data.educations">
+                                        <!-- Single Service Starts -->
+                                        <div v-for="(edu,eduInd) in datas.data.educations" :key="eduInd"
+                                            class="single-service col-sm-6 col-12">
+                                            <ul>
+                                                <li class="service-number">
+                                                    <span class="first-word">{{ edu.title }}</span>
+                                                    <span class="second-word">( {{ edu.session }} )</span>
+                                                </li>
+                                                <li>
+                                                    <ul>
+                                                        <li class="service-name">
+                                                            <i class="fas fa-angle-double-right"></i>
+                                                            <span>{{ edu.organization }}</span>
+                                                        </li>
+                                                        <li class="service-body" v-html="edu.description"></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Single Service Ends -->
+                                    </div>
+                                </div>
+                                <!-- Services Ends -->
+                            </div>
+                            <!-- Content Ends -->
+                        </div>
+                        <!-- Inner Content Ends -->
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+                    <img class="lg-profile-picture" src="assets/images/myphoto.jpeg" alt />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Files -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

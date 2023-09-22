@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="assets/images/oshit.png">
+    <title>OSHIT SUTRADAR</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,800%7COpen+Sans:400,400i,700"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="assets/css/frontend.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="container-fluid">
+            <div class="row no-gutters v-full">
+                <div id="left-wrapper" class="col-12 col-lg-8">
+                    <div id="resume" class="main-content">
+                        <!-- Close Button Starts -->
+                        <a href="index.html" class="close-menu-link">
+                            <i class="close-button fas fa-home fa-2x"></i>
+                        </a>
+                        <!-- Close Button Ends -->
+                        <!-- Content Hanging On Resume Section Starts -->
+                        <div class="hanging">
+                            <div id="logo-hanging"></div>
+
+                            <div class="text-hanging">
+                                <div class="word">
+                                    <h6>
+                                        MY <span>Curriculum Vitae</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Content Hanging On Resume Section Ends -->
+
+                        <!-- Inner Content Starts -->
+                        <div class="inner-content" v-if="!$root.spineer">
+                            <!-- Head Content Starts -->
+                            <div class="head-content head-content2">
+                                <h3>
+                                    My
+                                    <span>Curriculum Vitae</span>
+                                </h3>
+                            </div>
+                            <!-- Head Content Ends -->
+                            <!-- Content Starts -->
+                            <div class="content">
+                                <!-- cv Starts -->
+                                <div class="skills" v-if="datas.data">
+                                    <iframe :src="datas.data.cv+'#toolbar=0'" style="width:100%; height: 440px;"
+                                        frameborder=" 0"></iframe>
+                                </div>
+                                <!-- cv Ends -->
+                                <!-- Button Wrapper Starts -->
+                                <div class="button-wrapper" style="margin-bottom: 10px;" v-if="datas.data">
+                                    <!-- Single Button Starts -->
+                                    <a :href="datas.data.cv" download>
+                                        <span class="front">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span class="value">
+                                                Download
+                                                <span>Resume</span>
+                                            </span>
+                                        </span>
+                                        <span class="back">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span class="value">
+                                                Download
+                                                <span>Resume</span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                    <!-- Single Button Ends -->
+                                </div>
+                                <!-- Button Wrapper Ends -->
+                            </div>
+                            <!-- Content Ends -->
+                        </div>
+                        <!-- Inner Content Ends -->
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <img class="lg-profile-picture" src="assets/images/myphoto.jpeg" alt />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Files -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

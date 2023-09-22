@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="assets/images/oshit.png">
+    <title>OSHIT SUTRADAR</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,800%7COpen+Sans:400,400i,700"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="assets/css/frontend.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div class="container-fluid">
+            <div class="row no-gutters v-full">
+                <div id="left-wrapper" class="col-12 col-lg-8">
+                    <div id="portfolio" class="main-content">
+                        <!-- Close Button Starts -->
+                        <a href="index.html" class="close-menu-link">
+                            <i class="close-button fas fa-home fa-2x"></i>
+                        </a>
+                        <!-- Close Button Ends -->
+                        <!-- Content Hanging On Portfolio Section Starts -->
+                        <div class="hanging">
+                            <div id="logo-hanging"></div>
+
+                            <div class="text-hanging">
+                                <div class="word">
+                                    <h6>
+                                        MY <span>PORTFOLIO</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Content Hanging On Portfolio Section Ends -->
+
+                        <!-- Spinner -->
+                        <spinner />
+                        <!-- Spinner /-->
+
+                        <!-- Inner Content Starts -->
+                        <div class="inner-content" v-if="!$root.spineer">
+                            <!-- Head Content Starts -->
+                            <div class="head-content head-content2">
+                                <h3>
+                                    My
+                                    <span>Portfolio</span>
+                                </h3>
+                            </div>
+                            <!-- Head Content Ends -->
+                            <!-- Content Starts -->
+                            <div class="content">
+                                <!-- Projects Starts -->
+                                <div id="projects">
+                                    <!-- Projects Heading Starts -->
+                                    <h5>Projects</h5>
+                                    <!-- Projects Heading Ends -->
+                                    <div class="row no-gutters">
+                                        <!-- Portfolio Filter Starts -->
+                                        <div class="portfolio-filter col-12">
+                                            <ul>
+                                                <!-- Single Filter Starts -->
+                                                <li>
+                                                    <a href="#" class="current category ALL"
+                                                        @click="setFilter('ALL')">All</a>
+                                                </li>
+                                                <!-- Single Filter Ends -->
+
+                                                <!-- Single Filter Starts -->
+                                                <li v-for="(cate,catInd) in datas.data.categories" :key="catInd">
+                                                    <a href="#" :class="cate.slug" class="category"
+                                                        @click="setFilter(cate.slug)">{{
+                                                        cate.name }}</a>
+                                                </li>
+                                                <!-- Single Filter Ends -->
+                                            </ul>
+                                        </div>
+                                        <!-- Portfolio Filter Ends -->
+                                        <!-- Portfolio Item Starts -->
+                                        <div class="portfolio-item col-12">
+                                            <div class="item-wrapper row">
+                                                <slot v-for="(pro, pIndex) in datas.data.projects">
+                                                    <!-- Single Item Starts -->
+                                                    <div v-if="currentFilter === pro.category.slug || currentFilter === 'ALL'"
+                                                        :key="pIndex" class="item col-md-4 col-sm-6 col-12">
+                                                        <!-- Image Starts -->
+                                                        <div class="image">
+                                                            <img v-lazy="pro.image" :alt="pro.name"
+                                                                style="height: 300px;" />
+                                                        </div>
+                                                        <!-- Image Ends -->
+                                                        <!-- Overlay Starts -->
+                                                        <div class="overlay">
+                                                            <!-- View More (Button) Starts -->
+                                                            <a class="view-more" @click="showModal(pIndex)">
+                                                                <span class="front">
+                                                                    <i class="far fa-eye"></i>
+                                                                    <span class="value">
+                                                                        view
+                                                                        <span>details</span>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="back">
+                                                                    <i class="far fa-eye"></i>
+                                                                    <span class="value">
+                                                                        view
+                                                                        <span>details</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+                                                            <!-- View More (Button) Ends -->
+                                                            <!-- Image Info Starts -->
+                                                            <div class="image-info">
+                                                                <!-- Project Name Starts -->
+                                                                <span class="project-name">{{ pro.name }}</span>
+                                                                <!-- Project Name Ends -->
+                                                                <!-- Project Tags Starts -->
+                                                                <span class="project-tags">
+                                                                    <!-- Tag Icon Starts -->
+                                                                    <span class="tag-icon">
+                                                                        <i class="fas fa-tags"></i>
+                                                                    </span>
+                                                                    <!-- Tag Icon Ends -->
+                                                                    <!-- Tag Label Starts -->
+                                                                    <span class="tag-label">{{ pro.language }}</span>
+                                                                    <!-- Tag Label Ends -->
+                                                                </span>
+                                                                <!-- Project Tags Ends -->
+                                                            </div>
+                                                            <!-- Image Info Ends -->
+                                                        </div>
+                                                        <!-- Overlay Ends -->
+                                                    </div>
+                                                    <!-- Single Item Ends -->
+                                                </slot>
+                                            </div>
+                                        </div>
+                                        <!-- Portfolio Item Ends -->
+                                    </div>
+                                </div>
+                                <!-- Projects Ends -->
+                            </div>
+                            <!-- Content Ends -->
+                        </div>
+                        <!-- Inner Content Ends -->
+
+                        <modal name="project">
+                            <div class="project-popup" v-if="single_pro">
+                                <div class="cross" @click="hideModal()">〤</div>
+                                <!-- Project Picture On Popup Starts -->
+                                <img class="project-picture" v-lazy="single_pro.image" alt />
+                                <!-- Project Picture On Popup Ends -->
+                                <!-- Project Name Starts -->
+                                <h5 class="project-name">{{ single_pro.name }}</h5>
+                                <!-- Project Name Ends -->
+                                <!-- Project Info Starts -->
+                                <div class="project-info">
+                                    <!-- List Info Project Starts -->
+                                    <ul class="list-info-project">
+                                        <!-- Single List Starts -->
+                                        <li>
+                                            <span class="label">Category</span>
+                                            <span class="separator">:</span>
+                                            <span class="value" v-if="single_pro.category">{{ single_pro.category.name
+                                                }}</span>
+                                        </li>
+                                        <!-- Single List Ends -->
+                                    </ul>
+                                    <!-- List Info Project Ends -->
+                                    <!-- Project Description Starts -->
+                                    <div class="project-description">
+                                        <!-- Single Paragraph Starts -->
+                                        {{ single_pro.description }}
+                                        <!-- Single Paragraph -->
+                                    </div>
+                                    <!-- Project Description Ends -->
+                                </div>
+                                <!-- Project Info Ends -->
+                                <!-- Project Source Button Starts -->
+                                <a class="project-source" v-if="single_pro.web_url" :href="single_pro.web_url"
+                                    target="_blank">
+                                    <span class="front">
+                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                        <span class="value">
+                                            Visit <span>Site</span>
+                                        </span>
+                                    </span>
+                                    <span class="back">
+                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                        <span class="value">
+                                            Visit
+                                            <span>Site</span>
+                                        </span>
+                                    </span>
+                                </a>
+                                <!-- Project Source Button Ends -->
+                            </div>
+                        </modal>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <img class="lg-profile-picture" src="assets/images/myphoto.jpeg" alt />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Files -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
