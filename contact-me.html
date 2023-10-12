@@ -70,14 +70,12 @@
                                                     <span class="icon-of-value">
                                                         <i class="fas fa-envelope"></i>
                                                     </span>
-                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.email1
-                                                        }}</span>
+                                                    <span class="value">sd.oshit@gmail.com</span>
                                                     <br />
                                                     <span class="icon-of-value">
                                                         <i class="fas fa-envelope"></i>
                                                     </span>
-                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.email2
-                                                        }}</span>
+                                                    <span class="value">oshitsd99@gmail.com</span>
                                                 </li>
                                                 <!-- Single Contact Info Ends -->
                                                 <!-- Single Contact Info Starts -->
@@ -86,14 +84,7 @@
                                                     <span class="icon-of-value">
                                                         <i class="fas fa-mobile-alt"></i>
                                                     </span>
-                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.mobile1
-                                                        }}</span>
-                                                    <br />
-                                                    <span class="icon-of-value">
-                                                        <i class="fas fa-mobile-alt"></i>
-                                                    </span>
-                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.mobile2
-                                                        }}</span>
+                                                    <span class="value">01883847733</span>
                                                 </li>
                                                 <!-- Single Contact Info Ends -->
                                                 <!-- Single Contact Info Starts -->
@@ -102,7 +93,7 @@
                                                     <span class="icon-of-value">
                                                         <i class="fas fa-globe"></i>
                                                     </span>
-                                                    <span class="value">http://oshit.xyz</span>
+                                                    <span class="value">https://oshit-sd.github.io</span>
                                                 </li>
                                                 <!-- Single Contact Info Ends -->
                                                 <!-- Single Contact Info Starts -->
@@ -111,8 +102,7 @@
                                                     <span class="icon-of-value">
                                                         <i class="fas fa-map-marker-alt"></i>
                                                     </span>
-                                                    <span class="value" v-if="datas.data.cv">{{ datas.data.cv.address
-                                                        }}</span>
+                                                    <span class="value">Azampur, Uttara, Dhaka</span>
                                                 </li>
                                                 <!-- Single Contact Info Ends -->
                                                 <!-- Single Contact Info Starts -->
@@ -121,7 +111,7 @@
                                                     <ul class="social-media">
                                                         <!-- Single Social Media Starts -->
                                                         <li v-if="datas.data.config">
-                                                            <a :href="datas.data.config.fb_url" target="_blank">
+                                                            <a href="https://www.facebook.com/oshitsb" target="_blank">
                                                                 <span class="front">
                                                                     <i class="fab fa-facebook-f"></i>
                                                                 </span>
@@ -133,7 +123,7 @@
                                                         <!-- Single Social Media Ends -->
                                                         <!-- Single Social Media Starts -->
                                                         <li v-if="datas.data.config">
-                                                            <a :href="datas.data.config.gh_link" target="_blank">
+                                                            <a href="https://github.com/oshit-sd" target="_blank">
                                                                 <span class="front">
                                                                     <i class="fab fa-github"></i>
                                                                 </span>
@@ -145,7 +135,8 @@
                                                         <!-- Single Social Media Ends -->
                                                         <!-- Single Social Media Starts -->
                                                         <li v-if="datas.data.config">
-                                                            <a :href="datas.data.config.in_link" target="_blank">
+                                                            <a href="https://www.linkedin.com/in/oshitsd"
+                                                                target="_blank">
                                                                 <span class="front">
                                                                     <i class="fab fa-linkedin-in"></i>
                                                                 </span>
@@ -164,85 +155,6 @@
                                     </div>
                                 </div>
                                 <!-- Contact Info Ends -->
-                                <!-- Contact Form Starts -->
-                                <div id="contact-form">
-                                    <!-- Contact Form Heading Starts -->
-                                    <h5>Contact Me</h5>
-                                    <!-- Contact Form Heading Ends -->
-                                    <div class="row no-gutters">
-                                        <!-- Note Starts -->
-                                        <div class="note col-lg-9 col-md-9 col-12">
-                                            <!-- Single Paragraph Starts -->
-                                            <p>I m active in 24 hours a day. Hire me to the contact bellow</p>
-                                            <!-- Single Paragraph Ends -->
-                                        </div>
-                                        <!-- Note Ends -->
-                                        <!-- Alert/Contact Message Starts -->
-                                        <div class="alert contact-msg col-lg-9 col-md-9 col-12"></div>
-                                        <!-- Alert/Contact Message Ends -->
-                                        <!-- Form Wrapper Starts -->
-                                        <div class="form-wrapper col-lg-9 col-md-9 col-12">
-                                            <div v-if="spinner"
-                                                class="row d-flex align-items-center justify-content-center"
-                                                style="height:250px;">
-                                                <div
-                                                    class="card-body d-flex align-items-center justify-content-center flex-column">
-                                                    <i class="fa fa-spinner fa-spin"
-                                                        style="font-size:24px;color: rgb(0, 127, 62);"></i>
-                                                    <span class="processing">processing</span>
-                                                </div>
-                                            </div>
-                                            <form v-if="!spinner" v-on:submit.prevent="submit" class="contact">
-                                                <div class="form-group clearfix">
-                                                    <div class="inner-form-group">
-                                                        <input
-                                                            :class="{ 'invalid': validation.hasError('data.name'), 'valid': data.name }"
-                                                            type="text" v-model="data.name" placeholder="Name"
-                                                            class="form-control help-block" autocomplete="off" />
-                                                    </div>
-                                                    <div class="inner-form-group">
-                                                        <input
-                                                            :class="{ 'invalid': validation.hasError('data.email'), 'valid': data.email }"
-                                                            type="email" v-model="data.email" placeholder="Email"
-                                                            class="form-control" autocomplete="off" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input
-                                                        :class="{ 'invalid': validation.hasError('data.subject'), 'valid': data.subject }"
-                                                        type="text" v-model="data.subject" placeholder="Subject"
-                                                        class="form-control" autocomplete="off" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <textarea
-                                                        :class="{ 'invalid': validation.hasError('data.message'), 'valid': data.message }"
-                                                        v-model="data.message" placeholder="Message"
-                                                        class="form-control" autocomplete="off"></textarea>
-                                                </div>
-                                                <div class="form-group">
-                                                    <button type="submit">
-                                                        <span class="front">
-                                                            <i class="fas fa-paper-plane"></i>
-                                                            <span class="value">
-                                                                Send
-                                                                <span>Message</span>
-                                                            </span>
-                                                        </span>
-                                                        <span class="back">
-                                                            <i class="fas fa-paper-plane"></i>
-                                                            <span class="value">
-                                                                Send
-                                                                <span>Message</span>
-                                                            </span>
-                                                        </span>
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <!-- Form Wrapper Ends -->
-                                    </div>
-                                </div>
-                                <!-- Contact Form Ends -->
                             </div>
                             <!-- Content Ends -->
                         </div>

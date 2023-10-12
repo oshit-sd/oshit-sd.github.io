@@ -64,87 +64,12 @@
                                     <!-- Projects Heading Starts -->
                                     <h5>Projects</h5>
                                     <!-- Projects Heading Ends -->
-                                    <div class="row no-gutters">
-                                        <!-- Portfolio Filter Starts -->
-                                        <div class="portfolio-filter col-12">
-                                            <ul>
-                                                <!-- Single Filter Starts -->
-                                                <li>
-                                                    <a href="#" class="current category ALL"
-                                                        @click="setFilter('ALL')">All</a>
-                                                </li>
-                                                <!-- Single Filter Ends -->
-
-                                                <!-- Single Filter Starts -->
-                                                <li v-for="(cate,catInd) in datas.data.categories" :key="catInd">
-                                                    <a href="#" :class="cate.slug" class="category"
-                                                        @click="setFilter(cate.slug)">{{
-                                                        cate.name }}</a>
-                                                </li>
-                                                <!-- Single Filter Ends -->
-                                            </ul>
-                                        </div>
-                                        <!-- Portfolio Filter Ends -->
-                                        <!-- Portfolio Item Starts -->
-                                        <div class="portfolio-item col-12">
-                                            <div class="item-wrapper row">
-                                                <slot v-for="(pro, pIndex) in datas.data.projects">
-                                                    <!-- Single Item Starts -->
-                                                    <div v-if="currentFilter === pro.category.slug || currentFilter === 'ALL'"
-                                                        :key="pIndex" class="item col-md-4 col-sm-6 col-12">
-                                                        <!-- Image Starts -->
-                                                        <div class="image">
-                                                            <img v-lazy="pro.image" :alt="pro.name"
-                                                                style="height: 300px;" />
-                                                        </div>
-                                                        <!-- Image Ends -->
-                                                        <!-- Overlay Starts -->
-                                                        <div class="overlay">
-                                                            <!-- View More (Button) Starts -->
-                                                            <a class="view-more" @click="showModal(pIndex)">
-                                                                <span class="front">
-                                                                    <i class="far fa-eye"></i>
-                                                                    <span class="value">
-                                                                        view
-                                                                        <span>details</span>
-                                                                    </span>
-                                                                </span>
-                                                                <span class="back">
-                                                                    <i class="far fa-eye"></i>
-                                                                    <span class="value">
-                                                                        view
-                                                                        <span>details</span>
-                                                                    </span>
-                                                                </span>
-                                                            </a>
-                                                            <!-- View More (Button) Ends -->
-                                                            <!-- Image Info Starts -->
-                                                            <div class="image-info">
-                                                                <!-- Project Name Starts -->
-                                                                <span class="project-name">{{ pro.name }}</span>
-                                                                <!-- Project Name Ends -->
-                                                                <!-- Project Tags Starts -->
-                                                                <span class="project-tags">
-                                                                    <!-- Tag Icon Starts -->
-                                                                    <span class="tag-icon">
-                                                                        <i class="fas fa-tags"></i>
-                                                                    </span>
-                                                                    <!-- Tag Icon Ends -->
-                                                                    <!-- Tag Label Starts -->
-                                                                    <span class="tag-label">{{ pro.language }}</span>
-                                                                    <!-- Tag Label Ends -->
-                                                                </span>
-                                                                <!-- Project Tags Ends -->
-                                                            </div>
-                                                            <!-- Image Info Ends -->
-                                                        </div>
-                                                        <!-- Overlay Ends -->
-                                                    </div>
-                                                    <!-- Single Item Ends -->
-                                                </slot>
-                                            </div>
-                                        </div>
-                                        <!-- Portfolio Item Ends -->
+                                    <div class="row no-gutters pb-5">
+                                        Please visit this links
+                                        <a href="https://www.linkedin.com/in/oshitsd/details/projects/" target="_blank"
+                                            class="py-5 my-5" style="font-size: 25px;">
+                                            https://www.linkedin.com/in/oshitsd/details/projects/
+                                        </a>
                                     </div>
                                 </div>
                                 <!-- Projects Ends -->
