@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oshit Sutra Dar — Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#0a0f1e',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        accent: {
+                            blue: '#3b82f6',
+                            purple: '#8b5cf6',
+                            cyan: '#06b6d4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(30px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        glowPulse: {
+                            '0%, 100%': {
+                                boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)'
+                            },
+                            '50%': {
+                                boxShadow: '0 0 40px rgba(139, 92, 246, 0.5)'
+                            },
+                        },
+                        float: {
+                            '0%, 100%': {
+                                transform: 'translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-8px)'
+                            },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/portfolio.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 px-6">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="#home" class="font-mono text-lg font-semibold gradient-text">&lt;oshit.sd /&gt;</a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="nav-link text-slate-400 text-sm font-medium">About</a>
+                <a href="#skills" class="nav-link text-slate-400 text-sm font-medium">Skills</a>
+                <a href="#projects" class="nav-link text-slate-400 text-sm font-medium">Projects</a>
+                <a href="#experience" class="nav-link text-slate-400 text-sm font-medium">Experience</a>
+                <a href="#contact" class="nav-link text-slate-400 text-sm font-medium">Contact</a>
+                <a href="mailto:sd.oshit@gmail.com" class="btn-primary px-5 py-2 rounded-lg text-sm font-semibold text-white"><span>Hire Me</span></a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slate-400 hover:text-white transition-colors" aria-label="Toggle menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden mt-4 px-2">
+            <div class="glass-card rounded-xl p-4 flex flex-col gap-3">
+                <a href="#about" class="text-slate-300 hover:text-blue-400 transition-colors py-2 px-3 rounded-lg hover:bg-slate-800 text-sm font-medium" onclick="closeMobileMenu()">About</a>
+                <a href="#skills" class="text-slate-300 hover:text-blue-400 transition-colors py-2 px-3 rounded-lg hover:bg-slate-800 text-sm font-medium" onclick="closeMobileMenu()">Skills</a>
+                <a href="#projects" class="text-slate-300 hover:text-blue-400 transition-colors py-2 px-3 rounded-lg hover:bg-slate-800 text-sm font-medium" onclick="closeMobileMenu()">Projects</a>
+                <a href="#experience" class="text-slate-300 hover:text-blue-400 transition-colors py-2 px-3 rounded-lg hover:bg-slate-800 text-sm font-medium" onclick="closeMobileMenu()">Experience</a>
+                <a href="#contact" class="text-slate-300 hover:text-blue-400 transition-colors py-2 px-3 rounded-lg hover:bg-slate-800 text-sm font-medium" onclick="closeMobileMenu()">Contact</a>
+                <a href="mailto:sd.oshit@gmail.com" class="btn-primary text-center px-4 py-2 rounded-lg text-sm font-semibold text-white mt-1"><span>Hire Me</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <!-- Background grid -->
+        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(59,130,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+
+        <!-- Glowing orbs -->
+        <div class="absolute top-1/4 left-1/6 w-80 h-80 bg-blue-600 rounded-full filter blur-[140px] opacity-10 pointer-events-none"></div>
+        <div class="absolute bottom-1/3 right-1/6 w-96 h-96 bg-purple-600 rounded-full filter blur-[140px] opacity-10 pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-cyan-600 rounded-full filter blur-[160px] opacity-5 pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10 pt-28 pb-20 w-full">
+
+            <!-- Top intro row -->
+            <div class="animate-on-scroll visible mb-12">
+                <div class="flex flex-wrap items-center gap-2 mb-5 justify-center md:justify-start">
+                    <span class="font-mono text-xs px-3 py-1 rounded-full border border-green-500/30 bg-green-500/8 text-green-400" style="background:rgba(34,197,94,0.08);">● Available for opportunities</span>
+                    <span class="font-mono text-xs px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 text-slate-500">Dhaka, Bangladesh</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <!-- Left: identity -->
+                    <div>
+                        <p class="font-mono text-blue-400 text-sm mb-3 tracking-widest uppercase">Hello, World! 👋 I'm</p>
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+                            <span class="gradient-text">Oshit Sutra Dar</span>
+                        </h1>
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-500"></div>
+                            <h2 class="text-lg md:text-xl text-slate-300 font-semibold">Software Engineer</h2>
+                        </div>
+                        <p class="text-slate-400 text-base leading-relaxed mb-7 max-w-lg">
+                            7+ years building <span class="text-blue-400 font-medium">scalable web applications</span> with Laravel, Vue.js &amp; AWS. Specialised in backend architecture, microservices, and AI-integrated platforms.
+                        </p>
+
+                        <!-- Quick stats -->
+                        <div class="flex gap-6 mb-8">
+                            <div class="text-center">
+                                <div class="text-2xl font-extrabold gradient-text">7+</div>
+                                <div class="text-slate-500 text-xs mt-0.5">Years Exp.</div>
+                            </div>
+                            <div class="w-px bg-slate-800"></div>
+                            <div class="text-center">
+                                <div class="text-2xl font-extrabold gradient-text">40+</div>
+                                <div class="text-slate-500 text-xs mt-0.5">Projects</div>
+                            </div>
+                            <div class="w-px bg-slate-800"></div>
+                            <div class="text-center">
+                                <div class="text-2xl font-extrabold gradient-text">3</div>
+                                <div class="text-slate-500 text-xs mt-0.5">Companies</div>
+                            </div>
+                        </div>
+
+                        <!-- CTA buttons -->
+                        <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 mb-8">
+                            <a href="#projects" class="btn-primary px-4 sm:px-7 py-3 rounded-xl font-semibold text-white text-sm inline-flex items-center justify-center gap-2">
+                                <span><i class="fas fa-rocket"></i> View Projects</span>
+                            </a>
+                            <a href="#contact" class="btn-outline px-4 sm:px-7 py-3 rounded-xl font-semibold text-slate-300 text-sm inline-flex items-center justify-center gap-2">
+                                <i class="fas fa-envelope"></i> Get In Touch
+                            </a>
+                        </div>
+
+                        <!-- Social links -->
+                        <div class="flex items-center gap-5 justify-center md:justify-start">
+                            <a href="https://github.com/oshit-sd" target="_blank" rel="noopener noreferrer" class="social-icon text-slate-500 text-xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/oshitsd/" target="_blank" rel="noopener noreferrer" class="social-icon text-slate-500 text-xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:sd.oshit@gmail.com" class="social-icon text-slate-500 text-xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://oshit-sd.github.io" target="_blank" rel="noopener noreferrer" class="social-icon text-slate-500 text-xl" aria-label="Website"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Right: stack pills + project snapshot cards -->
+                    <div class="space-y-5">
+                        <!-- Core stack tags -->
+                        <div class="glass-card rounded-2xl px-5 py-4">
+                            <p class="text-slate-500 text-xs font-mono uppercase tracking-widest mb-3">Core Stack</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="hero-stack-tag"><i class="text-red-400 fab fa-laravel"></i> Laravel</span>
+                                <span class="hero-stack-tag"><i class="text-green-400 fab fa-vuejs"></i> Vue.js 3</span>
+                                <span class="hero-stack-tag"><i class="text-yellow-400 fab fa-python"></i> Python</span>
+                                <span class="hero-stack-tag"><i class="text-orange-400 fab fa-aws"></i> AWS</span>
+                                <span class="hero-stack-tag"><i class="text-blue-400 fab fa-docker"></i> Docker</span>
+                                <span class="hero-stack-tag"><i class="text-cyan-400 fas fa-database"></i> MySQL</span>
+                                <span class="hero-stack-tag"><i class="text-pink-400 fas fa-microchip"></i> Microservices</span>
+                                <span class="hero-stack-tag"><i class="text-purple-400 fas fa-robot"></i> AI / LLM</span>
+                            </div>
+                        </div>
+
+                        <!-- AI Projects at a glance -->
+                        <div>
+                            <p class="text-slate-500 text-xs font-mono uppercase tracking-widest mb-2 px-1">🤖 AI Projects</p>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a href="https://insight-agent-oshit.vercel.app" target="_blank" rel="noopener noreferrer" class="hero-project-card group">
+                                    <div class="flex items-center gap-2 mb-1.5">
+                                        <span class="text-lg">📊</span>
+                                        <span class="text-white text-xs font-bold group-hover:text-purple-300 transition-colors">Insight Agent</span>
+                                    </div>
+                                    <p class="text-slate-500 text-xs leading-snug">AI dashboard from natural language prompts</p>
+                                    <div class="mt-2 flex items-center gap-1 text-purple-400 text-xs font-medium">
+                                        <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
+                                    </div>
+                                </a>
+                                <a href="https://rog-sheba-oshit.vercel.app" target="_blank" rel="noopener noreferrer" class="hero-project-card group">
+                                    <div class="flex items-center gap-2 mb-1.5">
+                                        <span class="text-lg">💊</span>
+                                        <span class="text-white text-xs font-bold group-hover:text-cyan-300 transition-colors">Rog Sheba</span>
+                                    </div>
+                                    <p class="text-slate-500 text-xs leading-snug">AI-powered healthcare guidance assistant</p>
+                                    <div class="mt-2 flex items-center gap-1 text-cyan-400 text-xs font-medium">
+                                        <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Public Projects at a glance -->
+                        <div>
+                            <p class="text-slate-500 text-xs font-mono uppercase tracking-widest mb-2 px-1">🌐 Public Apps</p>
+                            <div class="grid grid-cols-4 gap-2">
+                                <a href="https://budget-calculate.vercel.app/" target="_blank" rel="noopener noreferrer" class="hero-mini-card group" title="Budget Calculator">
+                                    <span class="text-xl mb-1 block">💰</span>
+                                    <span class="text-slate-400 text-xs group-hover:text-green-400 transition-colors">Budget</span>
+                                </a>
+                                <a href="https://skill-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer" class="hero-mini-card group" title="SkillUp">
+                                    <span class="text-xl mb-1 block">📚</span>
+                                    <span class="text-slate-400 text-xs group-hover:text-blue-400 transition-colors">SkillUp</span>
+                                </a>
+                                <a href="https://follow-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer" class="hero-mini-card group" title="FollowUp">
+                                    <span class="text-xl mb-1 block">📈</span>
+                                    <span class="text-slate-400 text-xs group-hover:text-amber-400 transition-colors">FollowUp</span>
+                                </a>
+                                <a href="https://chat-app-oshit.vercel.app/" target="_blank" rel="noopener noreferrer" class="hero-mini-card group" title="Chat App">
+                                    <span class="text-xl mb-1 block">⚡</span>
+                                    <span class="text-slate-400 text-xs group-hover:text-cyan-400 transition-colors">Chat</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-600 text-xs animate-bounce">
+            <span>scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-bg-alt py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">Get to know me</p>
+                <h2 class="text-4xl font-bold text-white">About <span class="gradient-text">Me</span></h2>
+                <div class="mt-3 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll">
+                    <div class="glass-card rounded-2xl p-8">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-6 text-3xl font-bold text-white">
+                            OS
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Oshit Sutra Dar</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Software Engineer with <span class="text-blue-400 font-medium">7+ years of experience</span> building robust, scalable web applications. I specialize in backend architecture with Laravel and craft responsive front-ends with Vue.js, always focusing on performance, maintainability, and user experience.
+                        </p>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            I've worked across diverse domains — from e-commerce and fintech payment systems to SaaS platforms and microservice architectures on AWS. I'm driven by clean code, thoughtful system design, and continuous learning.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="flex items-center gap-2 text-slate-400 text-sm">
+                                <i class="fas fa-map-marker-alt text-blue-400"></i>
+                                <span>Azampur, Uttara, Dhaka, Bangladesh</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-400 text-sm mt-1">
+                                <i class="fas fa-briefcase text-purple-400"></i>
+                                <span>Open to opportunities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll grid grid-cols-2 gap-4">
+                    <div class="glass-card rounded-2xl p-6 text-center group hover:border-blue-500/40 transition-all duration-300">
+                        <div class="text-4xl font-extrabold gradient-text mb-2">7+</div>
+                        <div class="text-slate-400 text-sm">Years Experience</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 text-center group hover:border-purple-500/40 transition-all duration-300">
+                        <div class="text-4xl font-extrabold gradient-text mb-2">20+</div>
+                        <div class="text-slate-400 text-sm">Projects Delivered</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 text-center group hover:border-cyan-500/40 transition-all duration-300">
+                        <div class="text-4xl font-extrabold gradient-text mb-2">3</div>
+                        <div class="text-slate-400 text-sm">Companies</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 text-center group hover:border-blue-500/40 transition-all duration-300">
+                        <div class="text-4xl font-extrabold gradient-text mb-2">∞</div>
+                        <div class="text-slate-400 text-sm">Lines of Code</div>
+                    </div>
+
+                    <div class="col-span-2 glass-card rounded-2xl p-5">
+                        <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">Quick Info</h4>
+                        <div class="space-y-2 text-sm text-slate-400">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-phone text-blue-400 w-4 text-center"></i>
+                                <a href="tel:01883847733" class="hover:text-blue-400 transition-colors">01883-847733</a>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-envelope text-purple-400 w-4 text-center"></i>
+                                <a href="mailto:sd.oshit@gmail.com" class="hover:text-purple-400 transition-colors">sd.oshit@gmail.com</a>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-globe text-cyan-400 w-4 text-center"></i>
+                                <a href="https://oshit-sd.github.io" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">oshit-sd.github.io</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-24 px-6" style="background-color: #0f172a;">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">What I work with</p>
+                <h2 class="text-4xl font-bold text-white">Tech <span class="gradient-text">Stack</span></h2>
+                <div class="mt-3 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-blue-500/40 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                            <i class="fas fa-code text-blue-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-mono border border-blue-500/20">PHP</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-mono border border-blue-500/20">Python</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-mono border border-blue-500/20">SQL</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-mono border border-blue-500/20">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-purple-500/40 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                            <i class="fas fa-layer-group text-purple-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold">Frameworks</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-300 text-xs font-mono border border-purple-500/20">Laravel</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-300 text-xs font-mono border border-purple-500/20">Vue.js</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-300 text-xs font-mono border border-purple-500/20">Livewire</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-300 text-xs font-mono border border-purple-500/20">Inertia.js</span>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-cyan-500/40 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+                            <i class="fab fa-aws text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold">Cloud &amp; Architecture</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">AWS Lambda</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">API Gateway</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">EC2</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">S3</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">RDS</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">Microservices</span>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-green-500/40 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center">
+                            <i class="fas fa-database text-green-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold">Databases</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-green-500/10 text-green-300 text-xs font-mono border border-green-500/20">MySQL</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-green-500/10 text-green-300 text-xs font-mono border border-green-500/20">PostgreSQL</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-green-500/10 text-green-300 text-xs font-mono border border-green-500/20">MariaDB</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-green-500/10 text-green-300 text-xs font-mono border border-green-500/20">SQLite</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-green-500/10 text-green-300 text-xs font-mono border border-green-500/20">Redis</span>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-orange-500/40 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center">
+                            <i class="fas fa-tools text-orange-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold">Tools &amp; DevOps</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-orange-500/10 text-orange-300 text-xs font-mono border border-orange-500/20">Docker</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-orange-500/10 text-orange-300 text-xs font-mono border border-orange-500/20">Nginx</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-orange-500/10 text-orange-300 text-xs font-mono border border-orange-500/20">Git</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-orange-500/10 text-orange-300 text-xs font-mono border border-orange-500/20">GitHub Actions</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-orange-500/10 text-orange-300 text-xs font-mono border border-orange-500/20">Postman</span>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-pink-500/40 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center">
+                            <i class="fas fa-paint-brush text-pink-400"></i>
+                        </div>
+                        <h3 class="text-white font-semibold">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-300 text-xs font-mono border border-pink-500/20">HTML5</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-300 text-xs font-mono border border-pink-500/20">CSS3</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-300 text-xs font-mono border border-pink-500/20">Tailwind</span>
+                        <span class="skill-badge px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-300 text-xs font-mono border border-pink-500/20">Bootstrap</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section-bg-alt py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">Selected Work &amp; Open Projects</p>
+                <h2 class="text-4xl font-bold text-white">Projects</h2>
+                <div class="mt-3 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                <p class="text-slate-500 text-sm mt-4 max-w-lg mx-auto">Featured AI platforms, public SaaS tools, and production systems built across diverse domains.</p>
+            </div>
+
+            <!-- ── AI PROJECTS ── -->
+            <div class="mb-14">
+                <div class="category-divider cat-ai">
+                    <span class="label">⭐ Featured Projects</span>
+                    <span class="line"></span>
+                    <span class="featured-label">✦ Key Work</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <!-- Insight Agent -->
+                    <article class="ai-card rounded-2xl p-7 flex flex-col animate-on-scroll">
+                        <div class="flex items-start justify-between mb-5">
+                            <div class="flex items-center gap-3">
+                                <div class="text-3xl leading-none">📊</div>
+                                <span class="ai-badge">✦ AI Powered</span>
+                            </div>
+                            <a href="https://insight-agent-oshit.vercel.app" target="_blank" rel="noopener noreferrer" class="view-live-btn">
+                                <i class="fas fa-external-link-alt" style="font-size:10px"></i> View Live
+                            </a>
+                        </div>
+                        <h3 class="text-white font-bold text-xl mb-1">Insight Agent</h3>
+                        <p class="text-purple-300 text-sm font-medium mb-1">AI Dashboard Generator</p>
+                        <p class="text-slate-500 text-xs italic mb-4">&ldquo;Generate intelligent dashboards from natural language prompts&rdquo;</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Engineered an AI-driven dashboard system that dynamically transforms user prompts into structured visual analytics via the OpenRouter API — no predefined templates, fully adaptive output.
+                        </p>
+                        <ul class="text-slate-400 text-sm space-y-1.5 mb-5 flex-1">
+                            <li class="flex items-start gap-2"><span class="text-purple-400 text-xs mt-1">▸</span> Prompt-to-UI transformation with dynamic dashboard generation</li>
+                            <li class="flex items-start gap-2"><span class="text-purple-400 text-xs mt-1">▸</span> AI-driven data interpretation &amp; real-time visualization engine</li>
+                            <li class="flex items-start gap-2"><span class="text-purple-400 text-xs mt-1">▸</span> Modular, scalable frontend architecture decoupled from the AI layer</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2.5 py-1 rounded-md bg-slate-800/80 text-purple-300 text-xs font-mono border border-purple-500/20">OpenRouter API</span>
+                            <span class="tech-tag px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono border border-slate-700">Vue 3</span>
+                            <span class="tech-tag px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono border border-slate-700">TailwindCSS</span>
+                            <span class="tech-tag px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono border border-slate-700">Chart.js</span>
+                        </div>
+                    </article>
+
+                    <!-- Rog Sheba -->
+                    <article class="ai-card rounded-2xl p-7 flex flex-col animate-on-scroll">
+                        <div class="flex items-start justify-between mb-5">
+                            <div class="flex items-center gap-3">
+                                <div class="text-3xl leading-none">💊</div>
+                                <span class="ai-badge">✦ AI Powered</span>
+                            </div>
+                            <a href="https://rog-sheba-oshit.vercel.app" target="_blank" rel="noopener noreferrer" class="view-live-btn">
+                                <i class="fas fa-external-link-alt" style="font-size:10px"></i> View Live
+                            </a>
+                        </div>
+                        <h3 class="text-white font-bold text-xl mb-1">Rog Sheba</h3>
+                        <p class="text-cyan-300 text-sm font-medium mb-1">AI Healthcare Assistant</p>
+                        <p class="text-slate-500 text-xs italic mb-4">&ldquo;AI-powered healthcare guidance at your fingertips&rdquo;</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Developed an intelligent healthcare assistant delivering contextual medical suggestions and doctor recommendations. Designed for real-world usability with a scalable, stateless API architecture.
+                        </p>
+                        <ul class="text-slate-400 text-sm space-y-1.5 mb-5 flex-1">
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 text-xs mt-1">▸</span> AI-assisted symptom analysis &amp; contextual doctor recommendations</li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 text-xs mt-1">▸</span> Smart recommendation engine powered by OpenRouter API</li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 text-xs mt-1">▸</span> Stateless architecture enabling cost-efficient inference at scale</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag px-2.5 py-1 rounded-md bg-slate-800/80 text-cyan-300 text-xs font-mono border border-cyan-500/20">OpenRouter API</span>
+                            <span class="tech-tag px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono border border-slate-700">Vue 3</span>
+                            <span class="tech-tag px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono border border-slate-700">TailwindCSS</span>
+                            <span class="tech-tag px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono border border-slate-700">REST API</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+
+            <!-- ── SAAS / PUBLIC APPS ── -->
+            <div class="mb-14">
+                <div class="category-divider cat-saas">
+                    <span class="label">🌐 Public / SaaS Apps</span>
+                    <span class="line"></span>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                    <!-- Budget Calculator -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(34,197,94,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">💰</span>
+                            <a href="https://budget-calculate.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-live-btn" style="padding:4px 10px; font-size:0.7rem;">
+                                <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
+                            </a>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">Budget Calculator</h3>
+                        <p class="text-green-400 text-xs font-medium mb-3">Real-time financial insights with zero friction</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-green-400">▸</span> Instant calculation engine with live breakdown</li>
+                            <li class="flex items-start gap-1.5"><span class="text-green-400">▸</span> Clean, distraction-free financial UX</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">JavaScript</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Tailwind</span>
+                        </div>
+                    </article>
+
+                    <!-- SkillUp -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(59,130,246,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">📚</span>
+                            <a href="https://skill-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-live-btn" style="padding:4px 10px; font-size:0.7rem;">
+                                <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
+                            </a>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">SkillUp Platform</h3>
+                        <p class="text-blue-400 text-xs font-medium mb-3">Structured learning platform for modern users</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-400">▸</span> Course-based content with organized progression paths</li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-400">▸</span> Optimized for learner retention &amp; engagement</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">JavaScript</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Tailwind</span>
+                        </div>
+                    </article>
+
+                    <!-- FollowUp -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(251,191,36,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">📈</span>
+                            <a href="https://follow-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-live-btn" style="padding:4px 10px; font-size:0.7rem;">
+                                <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
+                            </a>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">FollowUp System</h3>
+                        <p class="text-amber-400 text-xs font-medium mb-3">Streamline client communication &amp; follow-ups</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-400">▸</span> Client tracking with structured meeting workflows</li>
+                            <li class="flex items-start gap-1.5"><span class="text-amber-400">▸</span> Business productivity &amp; lead pipeline optimization</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">JavaScript</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Tailwind</span>
+                        </div>
+                    </article>
+
+                    <!-- Chat App -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(6,182,212,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">⚡</span>
+                            <a href="https://chat-app-oshit.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-live-btn" style="padding:4px 10px; font-size:0.7rem;">
+                                <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
+                            </a>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">Real-time Chat App</h3>
+                        <p class="text-cyan-400 text-xs font-medium mb-3">Instant messaging powered by real-time architecture</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-cyan-400">▸</span> Sub-100ms delivery via persistent WebSocket connections</li>
+                            <li class="flex items-start gap-1.5"><span class="text-cyan-400">▸</span> Event-driven architecture with room-based isolation</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Socket.io</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Node.js</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- ── KEY PROJECTS ── -->
+            <div class="mb-14">
+                <div class="category-divider cat-ai">
+                    <span class="label">💼 Key Projects</span>
+                    <span class="line"></span>
+                    <span class="featured-label">✦ Professional</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- E-commerce & POS System -->
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll" style="border-color: rgba(59,130,246,0.18);">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="text-2xl">🛒</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(59,130,246,0.08); color:#60a5fa; border-color:rgba(59,130,246,0.2);">E-Commerce</span>
+                        </div>
+                        <h3 class="text-white font-bold text-base mb-1">E-Commerce &amp; POS System</h3>
+                        <p class="text-blue-400 text-xs font-medium mb-3">Full-featured retail platform with integrated POS</p>
+                        <ul class="text-slate-400 text-xs space-y-1.5 mb-4 flex-1">
+                            <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">▸</span> Product management, inventory tracking &amp; batch processing</li>
+                            <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">▸</span> Order processing, sales analytics &amp; financial reporting</li>
+                            <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">▸</span> Multi-gateway payment support for retail &amp; online sales</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js 3</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">MySQL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">REST API</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Bootstrap</span>
+                        </div>
+                    </article>
+
+                    <!-- ePayment System -->
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll" style="border-color: rgba(139,92,246,0.18);">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="text-2xl">💳</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(139,92,246,0.08); color:#a78bfa; border-color:rgba(139,92,246,0.2);">FinTech</span>
+                        </div>
+                        <h3 class="text-white font-bold text-base mb-1">ePayment System</h3>
+                        <p class="text-purple-400 text-xs font-medium mb-3">Centralized digital payment platform for institutions</p>
+                        <ul class="text-slate-400 text-xs space-y-1.5 mb-4 flex-1">
+                            <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">▸</span> Manages admission, academic &amp; hostel fee collection</li>
+                            <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">▸</span> Automated invoices, payment verification &amp; financial reports</li>
+                            <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5">▸</span> Multi-gateway integration via ShurjoPay &amp; SSLCommerz</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">ShurjoPay</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">SSLCommerz</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">MySQL</span>
+                        </div>
+                    </article>
+
+                    <!-- eCook Mobile Backend -->
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll" style="border-color: rgba(6,182,212,0.18);">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="text-2xl">🍳</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(6,182,212,0.08); color:#22d3ee; border-color:rgba(6,182,212,0.2);">Microservice</span>
+                        </div>
+                        <h3 class="text-white font-bold text-base mb-1">eCook Mobile Backend</h3>
+                        <p class="text-cyan-400 text-xs font-medium mb-3">Scalable microservice backend for food-tech mobile app</p>
+                        <ul class="text-slate-400 text-xs space-y-1.5 mb-4 flex-1">
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">▸</span> Recipe management, user interactions &amp; API-driven data delivery</li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">▸</span> Containerised with Docker for scalable, portable deployments</li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">▸</span> Optimised for mobile performance &amp; horizontal scaling</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Python</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Docker</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Microservice</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">REST API</span>
+                        </div>
+                    </article>
+
+                    <!-- School Management SaaS -->
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll" style="border-color: rgba(34,197,94,0.18);">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="text-2xl">🏫</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(34,197,94,0.08); color:#4ade80; border-color:rgba(34,197,94,0.2);">SaaS</span>
+                        </div>
+                        <h3 class="text-white font-bold text-base mb-1">School Management SaaS</h3>
+                        <p class="text-green-400 text-xs font-medium mb-3">Multi-tenant SaaS for end-to-end school operations</p>
+                        <ul class="text-slate-400 text-xs space-y-1.5 mb-4 flex-1">
+                            <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">▸</span> Admissions, attendance, hostel &amp; fee collection management</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">▸</span> Examinations, financial reporting &amp; role-based access control</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">▸</span> Multi-tenant architecture with centralised admin dashboard</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">MySQL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Multi-tenant</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">REST API</span>
+                        </div>
+                    </article>
+
+                    <!-- Project Management System -->
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll" style="border-color: rgba(245,158,11,0.18);">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="text-2xl">📌</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(245,158,11,0.08); color:#fbbf24; border-color:rgba(245,158,11,0.2);">Productivity</span>
+                        </div>
+                        <h3 class="text-white font-bold text-base mb-1">Project Management System</h3>
+                        <p class="text-amber-400 text-xs font-medium mb-3">Collaborative task &amp; workflow management platform</p>
+                        <ul class="text-slate-400 text-xs space-y-1.5 mb-4 flex-1">
+                            <li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">▸</span> Project &amp; task tracking with team member assignment</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">▸</span> Progress monitoring, milestone management &amp; reporting</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">▸</span> Improves team productivity &amp; workflow transparency</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">MySQL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">REST API</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- ── OTHER PROJECTS ── -->
+            <div class="mb-10">
+                <div class="category-divider" style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
+                    <span class="label" style="font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#94a3b8; white-space:nowrap;">📁 Other Projects</span>
+                    <span class="line" style="flex:1; height:1px; background:rgba(148,163,184,0.1);"></span>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                    <!-- eCook Notification Systems -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(245,158,11,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">🔔</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(245,158,11,0.08); color:#f59e0b; border-color:rgba(245,158,11,0.2);">Notification</span>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">eCook Notification System</h3>
+                        <p class="text-amber-400 text-xs font-medium mb-3">FCM push &amp; in-app popup delivery engine</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-400">▸</span> Firebase Cloud Messaging for mobile push delivery</li>
+                            <li class="flex items-start gap-1.5"><span class="text-amber-400">▸</span> Popup notifications triggered on user login events</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Python</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">FCM</span>
+                        </div>
+                    </article>
+
+                    <!-- Teachers Portal -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(139,92,246,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">🎓</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(139,92,246,0.08); color:#a78bfa; border-color:rgba(139,92,246,0.2);">EdTech</span>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">Teachers Portal</h3>
+                        <p class="text-purple-400 text-xs font-medium mb-3">Post-training skill retention &amp; peer exchange</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-purple-400">▸</span> Collaborative platform for trained educators to share insights</li>
+                            <li class="flex items-start gap-1.5"><span class="text-purple-400">▸</span> Redis-backed session &amp; performance-optimized queries</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">MySQL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Redis</span>
+                        </div>
+                    </article>
+
+                    <!-- Choto.co -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(34,197,94,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">🔗</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(34,197,94,0.08); color:#4ade80; border-color:rgba(34,197,94,0.2);">Utility</span>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">Choto.co</h3>
+                        <p class="text-green-400 text-xs font-medium mb-3">Minimal &amp; fast URL shortening service</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-green-400">▸</span> Instant short URL generation with custom alias support</li>
+                            <li class="flex items-start gap-1.5"><span class="text-green-400">▸</span> Click analytics &amp; redirect tracking per link</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">MySQL</span>
+                        </div>
+                    </article>
+
+                    <!-- CHAT Application -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(6,182,212,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">💬</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(6,182,212,0.08); color:#22d3ee; border-color:rgba(6,182,212,0.2);">Real-time</span>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">Live Support Chat</h3>
+                        <p class="text-cyan-400 text-xs font-medium mb-3">Multi-tenant student–school chat system</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-cyan-400">▸</span> Chatbot embedded across multiple systems via single URL</li>
+                            <li class="flex items-start gap-1.5"><span class="text-cyan-400">▸</span> Unified admin panel for multi-school message management</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Pusher</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">MySQL</span>
+                        </div>
+                    </article>
+
+                    <!-- BASIS Webportal -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(59,130,246,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">🏛️</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(59,130,246,0.08); color:#60a5fa; border-color:rgba(59,130,246,0.2);">Gov/Org</span>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">BASIS Web Portal</h3>
+                        <p class="text-blue-400 text-xs font-medium mb-3">National software industry association portal</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-400">▸</span> Member management, events &amp; payment gateway integration</li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-400">▸</span> SSLCommerz &amp; SMS gateway for payments &amp; notifications</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">SSLCommerz</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">SMS API</span>
+                        </div>
+                    </article>
+
+                    <!-- NSD E-Tender -->
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll" style="border-color: rgba(239,68,68,0.15);">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-2xl">📋</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-mono border" style="background:rgba(239,68,68,0.08); color:#f87171; border-color:rgba(239,68,68,0.2);">Gov/Tender</span>
+                        </div>
+                        <h3 class="text-white font-bold mb-1">NSD E-Tender</h3>
+                        <p class="text-red-400 text-xs font-medium mb-3">Digital tendering platform with secure payments</p>
+                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
+                            <li class="flex items-start gap-1.5"><span class="text-red-400">▸</span> End-to-end online tender submission &amp; evaluation workflow</li>
+                            <li class="flex items-start gap-1.5"><span class="text-red-400">▸</span> SSLCommerz-integrated tender fee collection</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Laravel</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Vue.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">MySQL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">SSLCommerz</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- ── FINAL CTA ── -->
+            <div class="text-center pt-2 animate-on-scroll">
+                <div class="glass-card inline-block rounded-2xl px-8 py-6" style="border-color: rgba(59,130,246,0.12);">
+                    <p class="text-slate-400 text-sm mb-1 font-medium">See the full portfolio</p>
+                    <p class="text-slate-600 text-xs mb-4">All production applications &amp; open-source experiments</p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <a href="https://www.linkedin.com/in/oshitsd/details/projects/" target="_blank" rel="noopener noreferrer" class="btn-outline px-6 py-2.5 rounded-xl text-sm font-semibold text-slate-300 inline-flex items-center gap-2">
+                            <i class="fab fa-linkedin text-blue-400"></i> Explore more on LinkedIn &rarr;
+                        </a>
+                        <a href="https://github.com/oshit-sd" target="_blank" rel="noopener noreferrer" class="btn-outline px-6 py-2.5 rounded-xl text-sm font-semibold text-slate-300 inline-flex items-center gap-2">
+                            <i class="fab fa-github"></i> View GitHub repos
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="py-24 px-6" style="background-color: #0f172a;">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">Where I've worked</p>
+                <h2 class="text-4xl font-bold text-white">Work <span class="gradient-text">Experience</span></h2>
+                <div class="mt-3 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-purple-500 to-transparent opacity-30 -translate-x-1/2"></div>
+
+                <!-- Riseup Labs -->
+                <div class="relative flex flex-col md:flex-row gap-8 mb-12 animate-on-scroll">
+                    <div class="md:w-1/2 md:text-right md:pr-12">
+                        <div class="glass-card rounded-2xl p-6 md:ml-auto">
+                            <div class="flex items-center gap-3 mb-1 md:justify-end">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                                    Current
+                                </span>
+                            </div>
+                            <h3 class="text-white font-bold text-lg">Software Engineer</h3>
+                            <p class="text-blue-400 font-medium text-sm mb-2">Riseup Labs</p>
+                            <p class="text-slate-500 text-xs mb-4 font-mono">2022 — Present</p>
+                            <ul class="text-slate-400 text-sm space-y-2 md:text-right">
+                                <li>→ Architecting and developing scalable web applications using Laravel and Vue.js</li>
+                                <li>→ Leading microservice design and deployment on AWS Lambda &amp; API Gateway</li>
+                                <li>→ Implementing CI/CD pipelines with GitHub Actions and Docker</li>
+                                <li>→ Collaborating with cross-functional teams on enterprise SaaS products</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-6 w-4 h-4 rounded-full timeline-dot ring-4 ring-slate-900"></div>
+                    <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                </div>
+
+                <!-- Nogor Solutions -->
+                <div class="relative flex flex-col md:flex-row gap-8 mb-12 animate-on-scroll">
+                    <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                    <div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-6 w-4 h-4 rounded-full timeline-dot ring-4 ring-slate-900"></div>
+                    <div class="md:w-1/2 md:pl-12 pl-12 md:pl-12">
+                        <div class="glass-card rounded-2xl p-6">
+                            <h3 class="text-white font-bold text-lg">Programmer</h3>
+                            <p class="text-purple-400 font-medium text-sm mb-2">Nogor Solutions Ltd.</p>
+                            <p class="text-slate-500 text-xs mb-4 font-mono">2019 — 2022</p>
+                            <ul class="text-slate-400 text-sm space-y-2">
+                                <li>→ Developed and maintained PHP/Laravel-based applications for clients</li>
+                                <li>→ Built RESTful APIs integrated with third-party payment gateways</li>
+                                <li>→ Designed database schemas and optimized complex SQL queries</li>
+                                <li>→ Participated in full project lifecycle from requirements to deployment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Link-Up Technology -->
+                <div class="relative flex flex-col md:flex-row gap-8 animate-on-scroll">
+                    <div class="md:w-1/2 md:text-right md:pr-12">
+                        <div class="glass-card rounded-2xl p-6 md:ml-auto">
+                            <h3 class="text-white font-bold text-lg">Programmer</h3>
+                            <p class="text-cyan-400 font-medium text-sm mb-2">Link-Up Technology Ltd.</p>
+                            <p class="text-slate-500 text-xs mb-4 font-mono">2018 — 2019</p>
+                            <ul class="text-slate-400 text-sm space-y-2 md:text-right">
+                                <li>→ Built dynamic web applications using PHP and MySQL</li>
+                                <li>→ Developed front-end interfaces using HTML, CSS, and JavaScript</li>
+                                <li>→ Maintained and enhanced existing client applications</li>
+                                <li>→ Gained foundational experience in agile development workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-6 w-4 h-4 rounded-full timeline-dot ring-4 ring-slate-900"></div>
+                    <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="mt-20">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <p class="font-mono text-purple-400 text-sm tracking-widest uppercase mb-2">Academic background</p>
+                    <h2 class="text-3xl font-bold text-white">Education</h2>
+                    <div class="mt-3 mx-auto w-12 h-1 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-purple-500/40 transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-purple-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold">BSc in Computer Science &amp; Engineering</h3>
+                                <p class="text-purple-400 text-sm font-medium mt-1">Dhaka International University</p>
+                                <div class="flex items-center gap-3 mt-2">
+                                    <span class="text-slate-500 text-xs font-mono">CGPA: <span class="text-slate-300">3.34 / 4.00</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-cyan-500/40 transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-certificate text-cyan-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold">Diploma in Computer Technology</h3>
+                                <p class="text-cyan-400 text-sm font-medium mt-1">Feni Polytechnic Institute</p>
+                                <div class="flex items-center gap-3 mt-2">
+                                    <span class="text-slate-500 text-xs font-mono">CGPA: <span class="text-slate-300">3.18 / 4.00</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-bg-alt py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">Let's work together</p>
+                <h2 class="text-4xl font-bold text-white">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="mt-3 mx-auto w-16 h-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                <p class="text-slate-400 mt-6 max-w-xl mx-auto">
+                    I'm currently open to new opportunities. Whether you have a project in mind, a question, or just want to say hi — my inbox is always open.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <a href="mailto:sd.oshit@gmail.com" class="glass-card rounded-2xl p-6 text-center group hover:border-blue-500/40 transition-all duration-300 animate-on-scroll block">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/20 transition-all">
+                        <i class="fas fa-envelope text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Email</h3>
+                    <p class="text-blue-400 text-sm hover:text-blue-300 transition-colors">sd.oshit@gmail.com</p>
+                </a>
+
+                <a href="tel:01883847733" class="glass-card rounded-2xl p-6 text-center group hover:border-purple-500/40 transition-all duration-300 animate-on-scroll block">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500/20 transition-all">
+                        <i class="fas fa-phone text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Phone</h3>
+                    <p class="text-purple-400 text-sm">01883-847733</p>
+                </a>
+
+                <div class="glass-card rounded-2xl p-6 text-center group hover:border-cyan-500/40 transition-all duration-300 animate-on-scroll">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-500/20 transition-all">
+                        <i class="fas fa-map-marker-alt text-cyan-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1">Location</h3>
+                    <p class="text-cyan-400 text-sm">Azampur, Uttara<br>Dhaka, Bangladesh</p>
+                </div>
+            </div>
+
+            <div class="text-center animate-on-scroll">
+                <p class="text-slate-400 text-sm mb-6">Find me on</p>
+                <div class="flex items-center justify-center gap-6">
+                    <a href="https://github.com/oshit-sd" target="_blank" rel="noopener noreferrer" class="glass-card w-12 h-12 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1" aria-label="GitHub">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/oshitsd/" target="_blank" rel="noopener noreferrer" class="glass-card w-12 h-12 rounded-xl flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://oshit-sd.github.io" target="_blank" rel="noopener noreferrer" class="glass-card w-12 h-12 rounded-xl flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1" aria-label="Website">
+                        <i class="fas fa-globe text-xl"></i>
+                    </a>
+                </div>
+
+                <div class="mt-10">
+                    <a href="mailto:sd.oshit@gmail.com" class="btn-primary px-10 py-4 rounded-xl font-semibold text-white text-base inline-flex items-center gap-3">
+                        <span><i class="fas fa-paper-plane mr-2"></i>Send Me a Message</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 px-6 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="font-mono text-slate-500 text-sm">&lt;oshit.sd /&gt;</p>
+            <p class="text-slate-600 text-sm text-center">
+                Designed &amp; built by <span class="text-slate-400 font-medium">Oshit Sutra Dar</span> &mdash; &copy; <span id="year"></span>
+            </p>
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/oshit-sd" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-400 transition-colors text-sm" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/oshitsd/" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-400 transition-colors text-sm" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/portfolio.js"></script>
+
+</body>
+
+</html>
