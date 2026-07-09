@@ -1,6 +1,27 @@
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// ── Border Beam injection ─────────────────────────────────────────────
+// Injects 4 spans (.bb-t .bb-r .bb-b .bb-l) into every element that
+// has one of the bb-* colour classes. Pure CSS animates them.
+(function () {
+    const beamSelectors = [
+        '.hero-core-stack',
+        '.hero-project-card',
+        '.hero-mini-card',
+        '.ai-card',
+        '.saas-card',
+        '.pub-card'
+    ];
+    document.querySelectorAll(beamSelectors.join(',')).forEach(el => {
+        ['bb-t', 'bb-r', 'bb-b', 'bb-l'].forEach(cls => {
+            const s = document.createElement('span');
+            s.className = cls;
+            el.appendChild(s);
+        });
+    });
+})();
+
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {

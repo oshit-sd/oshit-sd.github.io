@@ -76,8 +76,8 @@
 
     <!-- NAVBAR -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-4 px-6">
-        <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <a href="#home" class="font-mono text-lg font-semibold gradient-text">&lt;oshit.sd /&gt;</a>
+        <div class="site-container flex items-center justify-between">
+            <a href="#home" class="font-mono text-lg font-semibold logo-animated">&lt;oshit.sd <span class="logo-cursor">/&gt;</span></a>
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-8">
@@ -145,11 +145,11 @@
             class="absolute top-1/2 left-1/2 w-64 h-64 bg-cyan-600 rounded-full filter blur-[160px] opacity-5 pointer-events-none">
         </div>
 
-        <div class="max-w-6xl mx-auto px-6 relative z-10 pt-28 pb-20 w-full">
+        <div class="site-container relative z-10 pt-28 pb-20 w-full">
 
             <!-- Top intro row -->
             <div class="animate-on-scroll visible mb-12">
-                <div class="flex flex-wrap items-center gap-2 mb-5 justify-center md:justify-start">
+                <div class="hero-badge-row flex flex-wrap items-center gap-2 mb-5 justify-center md:justify-start">
                     <span
                         class="font-mono text-xs px-3 py-1 rounded-full border border-green-500/30 bg-green-500/8 text-green-400"
                         style="background:rgba(34,197,94,0.08);">● Available for opportunities</span>
@@ -161,23 +161,23 @@
                 <div class="grid md:grid-cols-2 gap-10 items-center">
                     <!-- Left: identity -->
                     <div>
-                        <p class="font-mono text-blue-400 text-sm mb-3 tracking-widest uppercase">Hello, World! 👋 I'm
+                        <p class="hero-hello font-mono text-blue-400 text-sm mb-3 tracking-widest uppercase">Hello, World! 👋 I'm
                         </p>
-                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
-                            <span class="gradient-text">Oshit Sutra Dar</span>
+                        <h1 class="hero-h1 text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+                            <span class="hero-name">Oshit Sutra Dar</span>
                         </h1>
-                        <div class="flex items-center gap-3 mb-5">
+                        <div class="hero-title-line flex items-center gap-3 mb-5">
                             <div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-500"></div>
                             <h2 class="text-lg md:text-xl text-slate-300 font-semibold">Software Engineer</h2>
                         </div>
-                        <p class="text-slate-400 text-base leading-relaxed mb-7 max-w-lg">
+                        <p class="hero-bio text-slate-400 text-base leading-relaxed mb-7 max-w-lg">
                             7+ years building <span class="text-blue-400 font-medium">scalable web applications</span>
                             with Laravel, Vue.js &amp; AWS. Specialised in backend architecture, microservices, and
                             AI-integrated platforms.
                         </p>
 
                         <!-- Quick stats -->
-                        <div class="flex gap-6 mb-8">
+                        <div class="hero-stats flex gap-6 mb-8">
                             <div class="text-center">
                                 <div class="text-2xl font-extrabold gradient-text">7+</div>
                                 <div class="text-slate-500 text-xs mt-0.5">Years Exp.</div>
@@ -195,7 +195,7 @@
                         </div>
 
                         <!-- CTA buttons -->
-                        <div class="grid grid-cols-3 sm:flex sm:flex-wrap gap-3 mb-8">
+                        <div class="hero-cta grid grid-cols-3 sm:flex sm:flex-wrap gap-3 mb-8">
                             <a href="#projects"
                                 class="btn-primary px-3 sm:px-7 py-3 rounded-xl font-semibold text-white text-xs sm:text-sm inline-flex items-center justify-center gap-1.5">
                                 <i class="fas fa-rocket"></i><span class="hidden xs:inline">View</span> Projects
@@ -212,7 +212,7 @@
                         </div>
 
                         <!-- Social links -->
-                        <div class="flex items-center gap-5 justify-center md:justify-start">
+                        <div class="hero-socials flex items-center gap-5 justify-center md:justify-start">
                             <a href="https://github.com/oshit-sd" target="_blank" rel="noopener noreferrer"
                                 class="social-icon text-slate-500 text-xl" aria-label="GitHub"><i
                                     class="fab fa-github"></i></a>
@@ -228,9 +228,9 @@
                     </div>
 
                     <!-- Right: stack pills + project snapshot cards -->
-                    <div class="space-y-5">
+                    <div class="hero-right space-y-5">
                         <!-- Core stack tags -->
-                        <div class="glass-card rounded-2xl px-5 py-4">
+                        <div class="glass-card hero-core-stack bb-blue rounded-2xl px-5 py-4">
                             <p class="text-slate-500 text-xs font-mono uppercase tracking-widest mb-3">Core Stack</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="hero-stack-tag"><i class="text-red-400 fab fa-laravel"></i> Laravel</span>
@@ -252,7 +252,8 @@
                                 Projects</p>
                             <div class="grid grid-cols-2 gap-3">
                                 <a href="https://insight-agent-oshit.vercel.app" target="_blank"
-                                    rel="noopener noreferrer" class="hero-project-card group">
+                                    rel="noopener noreferrer" class="hero-project-card bb-purple group">
+                                    <div class="hero-project-card-inner">
                                     <div class="flex items-center gap-2 mb-1.5">
                                         <span class="text-lg">📊</span>
                                         <span
@@ -264,9 +265,11 @@
                                     <div class="mt-2 flex items-center gap-1 text-purple-400 text-xs font-medium">
                                         <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
                                     </div>
+                                    </div>
                                 </a>
                                 <a href="https://rog-sheba-oshit.vercel.app" target="_blank" rel="noopener noreferrer"
-                                    class="hero-project-card group">
+                                    class="hero-project-card bb-cyan group">
+                                    <div class="hero-project-card-inner">
                                     <div class="flex items-center gap-2 mb-1.5">
                                         <span class="text-lg">💊</span>
                                         <span
@@ -278,6 +281,7 @@
                                     <div class="mt-2 flex items-center gap-1 text-cyan-400 text-xs font-medium">
                                         <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
                                     </div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -288,28 +292,36 @@
                                 Apps</p>
                             <div class="grid grid-cols-4 gap-2">
                                 <a href="https://budget-calculate.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                    class="hero-mini-card group" title="Budget Calculator">
+                                    class="hero-mini-card bb-green group" title="Budget Calculator">
                                     <span class="text-xl mb-1 block">💰</span>
-                                    <span
-                                        class="text-slate-400 text-xs group-hover:text-green-400 transition-colors">Budget</span>
+                                    <span class="text-slate-400 text-xs group-hover:text-green-400 transition-colors">Budget</span>
+                                    <div class="mt-1.5 flex items-center gap-1 text-green-400 text-xs font-medium">
+                                        <i class="fas fa-external-link-alt" style="font-size:8px"></i> Live
+                                    </div>
                                 </a>
                                 <a href="https://skill-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                    class="hero-mini-card group" title="SkillUp">
+                                    class="hero-mini-card bb-blue group" title="SkillUp">
                                     <span class="text-xl mb-1 block">📚</span>
-                                    <span
-                                        class="text-slate-400 text-xs group-hover:text-blue-400 transition-colors">SkillUp</span>
+                                    <span class="text-slate-400 text-xs group-hover:text-blue-400 transition-colors">SkillUp</span>
+                                    <div class="mt-1.5 flex items-center gap-1 text-blue-400 text-xs font-medium">
+                                        <i class="fas fa-external-link-alt" style="font-size:8px"></i> Live
+                                    </div>
                                 </a>
                                 <a href="https://follow-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                    class="hero-mini-card group" title="FollowUp">
+                                    class="hero-mini-card bb-amber group" title="FollowUp">
                                     <span class="text-xl mb-1 block">📈</span>
-                                    <span
-                                        class="text-slate-400 text-xs group-hover:text-amber-400 transition-colors">FollowUp</span>
+                                    <span class="text-slate-400 text-xs group-hover:text-amber-400 transition-colors">FollowUp</span>
+                                    <div class="mt-1.5 flex items-center gap-1 text-amber-400 text-xs font-medium">
+                                        <i class="fas fa-external-link-alt" style="font-size:8px"></i> Live
+                                    </div>
                                 </a>
                                 <a href="https://chat-app-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                    class="hero-mini-card group" title="Chat App">
+                                    class="hero-mini-card bb-cyan group" title="Chat App">
                                     <span class="text-xl mb-1 block">⚡</span>
-                                    <span
-                                        class="text-slate-400 text-xs group-hover:text-cyan-400 transition-colors">Chat</span>
+                                    <span class="text-slate-400 text-xs group-hover:text-cyan-400 transition-colors">Chat</span>
+                                    <div class="mt-1.5 flex items-center gap-1 text-cyan-400 text-xs font-medium">
+                                        <i class="fas fa-external-link-alt" style="font-size:8px"></i> Live
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -329,8 +341,8 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="section-bg-alt py-24 px-6">
-        <div class="max-w-6xl mx-auto">
+    <section id="about" class="section-bg-alt py-24">
+        <div class="site-container">
             <div class="text-center mb-16 animate-on-scroll">
                 <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">Get to know me</p>
                 <h2 class="text-4xl font-bold text-white">About <span class="gradient-text">Me</span></h2>
@@ -371,22 +383,22 @@
 
                 <div class="animate-on-scroll grid grid-cols-2 gap-4">
                     <div
-                        class="glass-card rounded-2xl p-6 text-center group hover:border-blue-500/40 transition-all duration-300">
+                        class="glass-card rounded-2xl p-6 text-center group hover:border-blue-500/60 hover:-translate-y-1 transition-all duration-300">
                         <div class="text-4xl font-extrabold gradient-text mb-2">7+</div>
                         <div class="text-slate-400 text-sm">Years Experience</div>
                     </div>
                     <div
-                        class="glass-card rounded-2xl p-6 text-center group hover:border-purple-500/40 transition-all duration-300">
+                        class="glass-card rounded-2xl p-6 text-center group hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300">
                         <div class="text-4xl font-extrabold gradient-text mb-2">100+</div>
                         <div class="text-slate-400 text-sm">Projects Delivered</div>
                     </div>
                     <div
-                        class="glass-card rounded-2xl p-6 text-center group hover:border-cyan-500/40 transition-all duration-300">
+                        class="glass-card rounded-2xl p-6 text-center group hover:border-cyan-500/60 hover:-translate-y-1 transition-all duration-300">
                         <div class="text-4xl font-extrabold gradient-text mb-2">3</div>
                         <div class="text-slate-400 text-sm">Companies</div>
                     </div>
                     <div
-                        class="glass-card rounded-2xl p-6 text-center group hover:border-blue-500/40 transition-all duration-300">
+                        class="glass-card rounded-2xl p-6 text-center group hover:border-blue-500/60 hover:-translate-y-1 transition-all duration-300">
                         <div class="text-4xl font-extrabold gradient-text mb-2">∞</div>
                         <div class="text-slate-400 text-sm">Lines of Code</div>
                     </div>
@@ -416,8 +428,8 @@
     </section>
 
     <!-- SKILLS SECTION -->
-    <section id="skills" class="py-24 px-6" style="background-color: #0f172a;">
-        <div class="max-w-6xl mx-auto">
+    <section id="skills" class="py-24" style="background-color: #0f172a;">
+        <div class="site-container">
             <div class="text-center mb-16 animate-on-scroll">
                 <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">What I work with</p>
                 <h2 class="text-4xl font-bold text-white">Tech <span class="gradient-text">Stack</span></h2>
@@ -427,7 +439,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <div
-                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-blue-500/40 transition-all duration-300">
+                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-blue-500/60 hover:-translate-y-1 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
                             <i class="fas fa-code text-blue-400"></i>
@@ -447,7 +459,7 @@
                 </div>
 
                 <div
-                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-purple-500/40 transition-all duration-300">
+                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center">
                             <i class="fas fa-layer-group text-purple-400"></i>
@@ -467,7 +479,7 @@
                 </div>
 
                 <div
-                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-cyan-500/40 transition-all duration-300">
+                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-cyan-500/60 hover:-translate-y-1 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center">
                             <i class="fab fa-aws text-cyan-400"></i>
@@ -493,7 +505,7 @@
                 </div>
 
                 <div
-                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-green-500/40 transition-all duration-300">
+                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-green-500/60 hover:-translate-y-1 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center">
                             <i class="fas fa-database text-green-400"></i>
@@ -515,7 +527,7 @@
                 </div>
 
                 <div
-                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-orange-500/40 transition-all duration-300">
+                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-orange-500/60 hover:-translate-y-1 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center">
                             <i class="fas fa-tools text-orange-400"></i>
@@ -538,7 +550,7 @@
                 </div>
 
                 <div
-                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-pink-500/40 transition-all duration-300">
+                    class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-pink-500/60 hover:-translate-y-1 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center">
                             <i class="fas fa-paint-brush text-pink-400"></i>
@@ -562,8 +574,8 @@
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects" class="section-bg-alt py-24 px-6">
-        <div class="max-w-6xl mx-auto">
+    <section id="projects" class="section-bg-alt py-24">
+        <div class="site-container">
             <div class="text-center mb-16 animate-on-scroll">
                 <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">Selected Work &amp; Open
                     Projects</p>
@@ -684,110 +696,98 @@
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
                     <!-- Budget Calculator -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(34,197,94,0.15);">
-                        <div class="flex items-start justify-between mb-3">
-                            <span class="text-2xl">💰</span>
-                            <a href="https://budget-calculate.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="view-live-btn" style="padding:4px 10px; font-size:0.7rem;">
-                                <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
-                            </a>
-                        </div>
-                        <h3 class="text-white font-bold mb-1">Budget Calculator</h3>
-                        <p class="text-green-400 text-xs font-medium mb-3">Real-time financial insights with zero
-                            friction</p>
-                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
-                            <li class="flex items-start gap-1.5"><span class="text-green-400">▸</span> Instant
-                                calculation engine with live breakdown</li>
-                            <li class="flex items-start gap-1.5"><span class="text-green-400">▸</span> Clean,
-                                distraction-free financial UX</li>
-                        </ul>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">JavaScript</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Tailwind</span>
+                    <article class="pub-card pc-green animate-on-scroll" style="--accent: #22c55e; --accent-dim: rgba(34,197,94,0.12); --accent-glow: rgba(34,197,94,0.25);">
+                        <div class="pub-card-top-bar"></div>
+                        <div class="p-5 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="pub-card-icon">💰</div>
+                                <a href="https://budget-calculate.vercel.app/" target="_blank" rel="noopener noreferrer" class="pub-live-btn">
+                                    <i class="fas fa-circle" style="font-size:6px;"></i> Live
+                                    <i class="fas fa-arrow-up-right-from-square" style="font-size:9px;"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-white font-bold text-sm mb-1">Budget Calculator</h3>
+                            <p class="pub-card-sub mb-3">Real-time financial insights</p>
+                            <ul class="text-slate-500 text-xs space-y-1.5 mb-4 flex-1">
+                                <li class="flex items-start gap-1.5"><span class="pub-bullet">▸</span> Live breakdown &amp; instant calculation</li>
+                                <li class="flex items-start gap-1.5"><span class="pub-bullet">▸</span> Clean, distraction-free financial UX</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="pub-tag">JavaScript</span>
+                                <span class="pub-tag">Tailwind</span>
+                            </div>
                         </div>
                     </article>
 
                     <!-- SkillUp -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(59,130,246,0.15);">
-                        <div class="flex items-start justify-between mb-3">
-                            <span class="text-2xl">📚</span>
-                            <a href="https://skill-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="view-live-btn" style="padding:4px 10px; font-size:0.7rem;">
-                                <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
-                            </a>
-                        </div>
-                        <h3 class="text-white font-bold mb-1">SkillUp Platform</h3>
-                        <p class="text-blue-400 text-xs font-medium mb-3">Structured learning platform for modern users
-                        </p>
-                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
-                            <li class="flex items-start gap-1.5"><span class="text-blue-400">▸</span> Course-based
-                                content with organized progression paths</li>
-                            <li class="flex items-start gap-1.5"><span class="text-blue-400">▸</span> Optimized for
-                                learner retention &amp; engagement</li>
-                        </ul>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">JavaScript</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Tailwind</span>
+                    <article class="pub-card pc-blue animate-on-scroll" style="--accent: #3b82f6; --accent-dim: rgba(59,130,246,0.12); --accent-glow: rgba(59,130,246,0.25);">
+                        <div class="pub-card-top-bar"></div>
+                        <div class="p-5 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="pub-card-icon">📚</div>
+                                <a href="https://skill-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer" class="pub-live-btn">
+                                    <i class="fas fa-circle" style="font-size:6px;"></i> Live
+                                    <i class="fas fa-arrow-up-right-from-square" style="font-size:9px;"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-white font-bold text-sm mb-1">SkillUp Platform</h3>
+                            <p class="pub-card-sub mb-3">Structured learning for modern users</p>
+                            <ul class="text-slate-500 text-xs space-y-1.5 mb-4 flex-1">
+                                <li class="flex items-start gap-1.5"><span class="pub-bullet">▸</span> Course-based content with progression paths</li>
+                                <li class="flex items-start gap-1.5"><span class="pub-bullet">▸</span> Optimized for learner retention &amp; engagement</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="pub-tag">JavaScript</span>
+                                <span class="pub-tag">Tailwind</span>
+                            </div>
                         </div>
                     </article>
 
                     <!-- FollowUp -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(251,191,36,0.15);">
-                        <div class="flex items-start justify-between mb-3">
-                            <span class="text-2xl">📈</span>
-                            <a href="https://follow-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="view-live-btn" style="padding:4px 10px; font-size:0.7rem;">
-                                <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
-                            </a>
-                        </div>
-                        <h3 class="text-white font-bold mb-1">FollowUp System</h3>
-                        <p class="text-amber-400 text-xs font-medium mb-3">Streamline client communication &amp;
-                            follow-ups</p>
-                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
-                            <li class="flex items-start gap-1.5"><span class="text-amber-400">▸</span> Client tracking
-                                with structured meeting workflows</li>
-                            <li class="flex items-start gap-1.5"><span class="text-amber-400">▸</span> Business
-                                productivity &amp; lead pipeline optimization</li>
-                        </ul>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">JavaScript</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Tailwind</span>
+                    <article class="pub-card pc-amber animate-on-scroll" style="--accent: #f59e0b; --accent-dim: rgba(245,158,11,0.12); --accent-glow: rgba(245,158,11,0.25);">
+                        <div class="pub-card-top-bar"></div>
+                        <div class="p-5 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="pub-card-icon">📈</div>
+                                <a href="https://follow-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer" class="pub-live-btn">
+                                    <i class="fas fa-circle" style="font-size:6px;"></i> Live
+                                    <i class="fas fa-arrow-up-right-from-square" style="font-size:9px;"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-white font-bold text-sm mb-1">FollowUp System</h3>
+                            <p class="pub-card-sub mb-3">Streamline client communication</p>
+                            <ul class="text-slate-500 text-xs space-y-1.5 mb-4 flex-1">
+                                <li class="flex items-start gap-1.5"><span class="pub-bullet">▸</span> Client tracking with structured workflows</li>
+                                <li class="flex items-start gap-1.5"><span class="pub-bullet">▸</span> Lead pipeline &amp; productivity optimization</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="pub-tag">JavaScript</span>
+                                <span class="pub-tag">Tailwind</span>
+                            </div>
                         </div>
                     </article>
 
                     <!-- Chat App -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(6,182,212,0.15);">
-                        <div class="flex items-start justify-between mb-3">
-                            <span class="text-2xl">⚡</span>
-                            <a href="https://chat-app-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="view-live-btn" style="padding:4px 10px; font-size:0.7rem;">
-                                <i class="fas fa-external-link-alt" style="font-size:9px"></i> Live
-                            </a>
-                        </div>
-                        <h3 class="text-white font-bold mb-1">Real-time Chat App</h3>
-                        <p class="text-cyan-400 text-xs font-medium mb-3">Instant messaging powered by real-time
-                            architecture</p>
-                        <ul class="text-slate-500 text-xs space-y-1 mb-4 flex-1">
-                            <li class="flex items-start gap-1.5"><span class="text-cyan-400">▸</span> Sub-100ms delivery
-                                via persistent WebSocket connections</li>
-                            <li class="flex items-start gap-1.5"><span class="text-cyan-400">▸</span> Event-driven
-                                architecture with room-based isolation</li>
-                        </ul>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Socket.io</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-slate-800 text-slate-500 text-xs font-mono border border-slate-700">Node.js</span>
+                    <article class="pub-card pc-cyan animate-on-scroll" style="--accent: #06b6d4; --accent-dim: rgba(6,182,212,0.12); --accent-glow: rgba(6,182,212,0.25);">
+                        <div class="pub-card-top-bar"></div>
+                        <div class="p-5 flex flex-col h-full">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="pub-card-icon">⚡</div>
+                                <a href="https://chat-app-oshit.vercel.app/" target="_blank" rel="noopener noreferrer" class="pub-live-btn">
+                                    <i class="fas fa-circle" style="font-size:6px;"></i> Live
+                                    <i class="fas fa-arrow-up-right-from-square" style="font-size:9px;"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-white font-bold text-sm mb-1">Real-time Chat App</h3>
+                            <p class="pub-card-sub mb-3">Instant messaging, real-time architecture</p>
+                            <ul class="text-slate-500 text-xs space-y-1.5 mb-4 flex-1">
+                                <li class="flex items-start gap-1.5"><span class="pub-bullet">▸</span> Sub-100ms delivery via WebSocket connections</li>
+                                <li class="flex items-start gap-1.5"><span class="pub-bullet">▸</span> Event-driven, room-based isolation</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="pub-tag">Socket.io</span>
+                                <span class="pub-tag">Node.js</span>
+                            </div>
                         </div>
                     </article>
 
@@ -805,8 +805,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <!-- E-commerce & POS System -->
-                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(59,130,246,0.18);">
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll sc-blue">
                         <div class="flex items-start justify-between mb-4">
                             <span class="text-2xl">🛒</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -840,8 +839,7 @@
                     </article>
 
                     <!-- ePayment System -->
-                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(139,92,246,0.18);">
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll sc-purple">
                         <div class="flex items-start justify-between mb-4">
                             <span class="text-2xl">💳</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -873,8 +871,7 @@
                     </article>
 
                     <!-- eCook Mobile Backend -->
-                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(6,182,212,0.18);">
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll sc-cyan">
                         <div class="flex items-start justify-between mb-4">
                             <span class="text-2xl">🍳</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -907,8 +904,7 @@
                     </article>
 
                     <!-- School Management SaaS -->
-                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(34,197,94,0.18);">
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll sc-green">
                         <div class="flex items-start justify-between mb-4">
                             <span class="text-2xl">🏫</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -941,8 +937,7 @@
                     </article>
 
                     <!-- Project Management System -->
-                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(245,158,11,0.18);">
+                    <article class="saas-card glass-card rounded-2xl p-6 flex flex-col animate-on-scroll sc-amber">
                         <div class="flex items-start justify-between mb-4">
                             <span class="text-2xl">📌</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -987,8 +982,7 @@
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
                     <!-- eCook Notification Systems -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(245,158,11,0.15);">
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll sc-amber">
                         <div class="flex items-start justify-between mb-3">
                             <span class="text-2xl">🔔</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -1014,8 +1008,7 @@
                     </article>
 
                     <!-- Teachers Portal -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(139,92,246,0.15);">
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll sc-purple">
                         <div class="flex items-start justify-between mb-3">
                             <span class="text-2xl">🎓</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -1043,8 +1036,7 @@
                     </article>
 
                     <!-- Choto.co -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(34,197,94,0.15);">
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll sc-green">
                         <div class="flex items-start justify-between mb-3">
                             <span class="text-2xl">🔗</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -1069,8 +1061,7 @@
                     </article>
 
                     <!-- CHAT Application -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(6,182,212,0.15);">
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll sc-cyan">
                         <div class="flex items-start justify-between mb-3">
                             <span class="text-2xl">💬</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -1097,8 +1088,7 @@
                     </article>
 
                     <!-- BASIS Webportal -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(59,130,246,0.15);">
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll sc-blue">
                         <div class="flex items-start justify-between mb-3">
                             <span class="text-2xl">🏛️</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -1127,8 +1117,7 @@
                     </article>
 
                     <!-- NSD E-Tender -->
-                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll"
-                        style="border-color: rgba(239,68,68,0.15);">
+                    <article class="saas-card glass-card rounded-2xl p-5 flex flex-col animate-on-scroll sc-red">
                         <div class="flex items-start justify-between mb-3">
                             <span class="text-2xl">📋</span>
                             <span class="px-2 py-0.5 rounded text-xs font-mono border"
@@ -1181,8 +1170,8 @@
     </section>
 
     <!-- EXPERIENCE SECTION -->
-    <section id="experience" class="py-24 px-6" style="background-color: #0f172a;">
-        <div class="max-w-4xl mx-auto">
+    <section id="experience" class="py-24" style="background-color: #0f172a;">
+        <div class="site-container-sm">
             <div class="text-center mb-16 animate-on-scroll">
                 <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">Where I've worked</p>
                 <h2 class="text-4xl font-bold text-white">Work <span class="gradient-text">Experience</span></h2>
@@ -1277,7 +1266,7 @@
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div
-                        class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-purple-500/40 transition-all duration-300">
+                        class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300">
                         <div class="flex items-start gap-4">
                             <div
                                 class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
@@ -1295,7 +1284,7 @@
                     </div>
 
                     <div
-                        class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-cyan-500/40 transition-all duration-300">
+                        class="glass-card rounded-2xl p-6 animate-on-scroll hover:border-cyan-500/60 hover:-translate-y-1 transition-all duration-300">
                         <div class="flex items-start gap-4">
                             <div
                                 class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
@@ -1317,8 +1306,8 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="section-bg-alt py-24 px-6">
-        <div class="max-w-4xl mx-auto">
+    <section id="contact" class="section-bg-alt py-24">
+        <div class="site-container-sm">
             <div class="text-center mb-16 animate-on-scroll">
                 <p class="font-mono text-blue-400 text-sm tracking-widest uppercase mb-2">Let's work together</p>
                 <h2 class="text-4xl font-bold text-white">Get In <span class="gradient-text">Touch</span></h2>
@@ -1331,7 +1320,7 @@
 
             <div class="grid md:grid-cols-3 gap-6 mb-10">
                 <a href="mailto:sd.oshit@gmail.com"
-                    class="glass-card rounded-2xl p-6 text-center group hover:border-blue-500/40 transition-all duration-300 animate-on-scroll block">
+                    class="glass-card rounded-2xl p-6 text-center group hover:border-blue-500/60 hover:-translate-y-1 transition-all duration-300 animate-on-scroll block">
                     <div
                         class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/20 transition-all">
                         <i class="fas fa-envelope text-blue-400 text-2xl"></i>
@@ -1341,7 +1330,7 @@
                 </a>
 
                 <a href="tel:01883847733"
-                    class="glass-card rounded-2xl p-6 text-center group hover:border-purple-500/40 transition-all duration-300 animate-on-scroll block">
+                    class="glass-card rounded-2xl p-6 text-center group hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300 animate-on-scroll block">
                     <div
                         class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500/20 transition-all">
                         <i class="fas fa-phone text-purple-400 text-2xl"></i>
@@ -1351,7 +1340,7 @@
                 </a>
 
                 <div
-                    class="glass-card rounded-2xl p-6 text-center group hover:border-cyan-500/40 transition-all duration-300 animate-on-scroll">
+                    class="glass-card rounded-2xl p-6 text-center group hover:border-cyan-500/60 hover:-translate-y-1 transition-all duration-300 animate-on-scroll">
                     <div
                         class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-500/20 transition-all">
                         <i class="fas fa-map-marker-alt text-cyan-400 text-2xl"></i>
@@ -1365,17 +1354,17 @@
                 <p class="text-slate-400 text-sm mb-6">Find me on</p>
                 <div class="flex items-center justify-center gap-6">
                     <a href="https://github.com/oshit-sd" target="_blank" rel="noopener noreferrer"
-                        class="glass-card w-12 h-12 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1"
+                        class="glass-card w-12 h-12 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/60 hover:-translate-y-1 transition-all duration-300 hover:-translate-y-1"
                         aria-label="GitHub">
                         <i class="fab fa-github text-xl"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/oshitsd/" target="_blank" rel="noopener noreferrer"
-                        class="glass-card w-12 h-12 rounded-xl flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1"
+                        class="glass-card w-12 h-12 rounded-xl flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-500/60 hover:-translate-y-1 transition-all duration-300 hover:-translate-y-1"
                         aria-label="LinkedIn">
                         <i class="fab fa-linkedin text-xl"></i>
                     </a>
                     <a href="https://oshit-sd.github.io" target="_blank" rel="noopener noreferrer"
-                        class="glass-card w-12 h-12 rounded-xl flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1"
+                        class="glass-card w-12 h-12 rounded-xl flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/60 hover:-translate-y-1 transition-all duration-300 hover:-translate-y-1"
                         aria-label="Website">
                         <i class="fas fa-globe text-xl"></i>
                     </a>
@@ -1393,7 +1382,7 @@
 
     <!-- FOOTER -->
     <footer class="py-8 px-6 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="site-container flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="font-mono text-slate-500 text-sm">&lt;oshit.sd /&gt;</p>
             <p class="text-slate-600 text-sm text-center">
                 Designed &amp; built by <span class="text-slate-400 font-medium">Oshit Sutra Dar</span> &mdash; &copy;
