@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm OSHIT SUTRA DAR</h1>
 
 <p align="justify">
-   I have 5+ years of experience in software development. Currently, I am working as a Software Engineer at Riseup Labs. I have a strong desire to achieve results, responsibility, and the capacity to work under pressure. I have a willingness to learn and a quick learning capability. I have multi-tasking ability and experience handling multiple projects at a time.
+   I have 7+ years of experience in software development. Currently, I am working as a Software Engineer at Riseup Labs. I have a strong desire to achieve results, responsibility, and the capacity to work under pressure. I have a willingness to learn and a quick learning capability. I have multi-tasking ability and experience handling multiple projects at a time.
 </p>
 
 <b>Skills - </b> RESTful WebServices, PHP, Laravel, Vue.js, JavaScript, Ajax, JQuery, MySQL, Bootstrap, HTML, CSS, Postman, Github, Gitlab, Bitbucket, cPanel, VPS Server.
