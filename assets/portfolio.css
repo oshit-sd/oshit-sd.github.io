@@ -213,13 +213,20 @@ body {
     overflow: hidden;
 }
 
+.hover\:border-violet-500\/60 {
+    border-color: rgba(139, 92, 246, 0.3) !important;
+    position: relative;
+    overflow: hidden;
+}
+
 /* shared ::before setup */
 .hover\:border-blue-500\/60::before,
 .hover\:border-purple-500\/60::before,
 .hover\:border-cyan-500\/60::before,
 .hover\:border-green-500\/60::before,
 .hover\:border-orange-500\/60::before,
-.hover\:border-pink-500\/60::before {
+.hover\:border-pink-500\/60::before,
+.hover\:border-violet-500\/60::before {
     content: '';
     position: absolute;
     top: 0;
@@ -257,6 +264,10 @@ body {
     background: linear-gradient(90deg, rgba(236, 72, 153, 1) 0%, transparent 85%);
 }
 
+.hover\:border-violet-500\/60::before {
+    background: linear-gradient(90deg, rgba(139, 92, 246, 1) 0%, rgba(99, 102, 241, 0.6) 60%, transparent 85%);
+}
+
 /* hover */
 .hover\:border-blue-500\/60:hover {
     border-color: rgba(59, 130, 246, 0.65) !important;
@@ -288,12 +299,18 @@ body {
     transform: translateY(-4px);
 }
 
+.hover\:border-violet-500\/60:hover {
+    border-color: rgba(139, 92, 246, 0.65) !important;
+    transform: translateY(-4px);
+}
+
 .hover\:border-blue-500\/60:hover::before,
 .hover\:border-purple-500\/60:hover::before,
 .hover\:border-cyan-500\/60:hover::before,
 .hover\:border-green-500\/60:hover::before,
 .hover\:border-orange-500\/60:hover::before,
-.hover\:border-pink-500\/60:hover::before {
+.hover\:border-pink-500\/60:hover::before,
+.hover\:border-violet-500\/60:hover::before {
     opacity: 1;
 }
 
@@ -1088,6 +1105,21 @@ body {
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(59, 130, 246, 0.18));
     border: 1px solid rgba(139, 92, 246, 0.35);
     color: #c4b5fd;
+}
+
+.agent-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(34, 197, 94, 0.15));
+    border: 1px solid rgba(6, 182, 212, 0.35);
+    color: #67e8f9;
 }
 
 .featured-label {
