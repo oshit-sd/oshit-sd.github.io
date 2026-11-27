@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1017"/>
+      <stop offset="100%" stop-color="#141822"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" rx="14" fill="url(#bg)"/>
+  <rect width="640" height="360" rx="14" fill="url(#glow)"/>
+  <g opacity="0.16" stroke="#334155" stroke-width="1">
+    <path d="M0 90H640M0 180H640M0 270H640M160 0V360M320 0V360M480 0V360"/>
+  </g>
+  <!-- Browser/App Top Chrome -->
+  <rect x="28" y="24" width="584" height="312" rx="12" fill="#0b0d12" stroke="#252a36" stroke-width="1.5"/>
+  <path d="M28 36C28 29.3726 33.3726 24 40 24H600C606.627 24 612 29.3726 612 36V60H28V36Z" fill="#121620"/>
+  <circle cx="48" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="64" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="80" cy="42" r="4.5" fill="#3f3f46"/>
+  <rect x="104" y="34" width="210" height="16" rx="4" fill="#1a1f2c"/>
+  <text x="114" y="45" fill="#94a3b8" font-family="monospace" font-size="9.5">fcm // push-popup</text>
+  <text x="594" y="45" text-anchor="end" fill="#f59e0b" font-family="monospace" font-size="9.5" font-weight="bold">NOTIFICATION ENGINE</text>
+  
+      <rect x="48" y="82" width="260" height="228" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="68" y="108" fill="#fbbf24" font-family="monospace" font-size="10">EVENT DISPATCHER</text>
+      <rect x="68" y="128" width="220" height="42" rx="8" fill="#1e293b"/>
+      <circle cx="88" cy="149" r="8" fill="#f59e0b"/>
+      <text x="106" y="153" fill="#f8fafc" font-family="sans-serif" font-size="11">User Login Triggered</text>
+      <path d="M178 170V196" stroke="#f59e0b" stroke-width="2"/>
+      <rect x="68" y="198" width="220" height="42" rx="8" fill="#1e293b"/>
+      <text x="84" y="223" fill="#cbd5e1" font-family="monospace" font-size="10">FCM Topic Broadcast</text>
+      <rect x="330" y="82" width="262" height="228" rx="10" fill="#141822" stroke="#f59e0b" stroke-opacity="0.4"/>
+      <text x="350" y="108" fill="#94a3b8" font-family="monospace" font-size="10">PUSH &amp; IN-APP POPUP</text>
+      <rect x="350" y="132" width="222" height="72" rx="10" fill="#1f2937" stroke="#fbbf24" stroke-opacity="0.6"/>
+      <rect x="366" y="148" width="140" height="8" rx="4" fill="#f8fafc"/>
+      <rect x="366" y="166" width="180" height="6" rx="3" fill="#94a3b8"/>
+      <rect x="366" y="180" width="90" height="6" rx="3" fill="#fbbf24"/>
+      <rect x="350" y="220" width="222" height="66" rx="10" fill="#1b2232"/>
+      <text x="368" y="250" fill="#34d399" font-family="monospace" font-size="10">DELIVERY RATE: 99.2%</text>
+      <text x="368" y="268" fill="#64748b" font-family="monospace" font-size="9">PYTHON + VUE.JS + FCM</text>
+    
+</svg>

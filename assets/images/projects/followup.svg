@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1017"/>
+      <stop offset="100%" stop-color="#141822"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" rx="14" fill="url(#bg)"/>
+  <rect width="640" height="360" rx="14" fill="url(#glow)"/>
+  <g opacity="0.16" stroke="#334155" stroke-width="1">
+    <path d="M0 90H640M0 180H640M0 270H640M160 0V360M320 0V360M480 0V360"/>
+  </g>
+  <!-- Browser/App Top Chrome -->
+  <rect x="28" y="24" width="584" height="312" rx="12" fill="#0b0d12" stroke="#252a36" stroke-width="1.5"/>
+  <path d="M28 36C28 29.3726 33.3726 24 40 24H600C606.627 24 612 29.3726 612 36V60H28V36Z" fill="#121620"/>
+  <circle cx="48" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="64" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="80" cy="42" r="4.5" fill="#3f3f46"/>
+  <rect x="104" y="34" width="210" height="16" rx="4" fill="#1a1f2c"/>
+  <text x="114" y="45" fill="#94a3b8" font-family="monospace" font-size="9.5">crm // lead-pipeline</text>
+  <text x="594" y="45" text-anchor="end" fill="#f59e0b" font-family="monospace" font-size="9.5" font-weight="bold">FOLLOWUP SYSTEM</text>
+  
+      <rect x="48" y="80" width="170" height="232" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="66" y="106" fill="#94a3b8" font-family="monospace" font-size="10">NEW LEADS</text>
+      <rect x="66" y="124" width="134" height="48" rx="6" fill="#1e293b"/>
+      <rect x="66" y="184" width="134" height="48" rx="6" fill="#1e293b"/>
+      <rect x="235" y="80" width="170" height="232" rx="10" fill="#141822" stroke="#f59e0b" stroke-opacity="0.45"/>
+      <text x="253" y="106" fill="#fbbf24" font-family="monospace" font-size="10">FOLLOW-UP DUE</text>
+      <rect x="253" y="124" width="134" height="56" rx="6" fill="#1e293b"/>
+      <rect x="265" y="138" width="90" height="7" rx="3.5" fill="#fbbf24"/>
+      <rect x="422" y="80" width="170" height="232" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="440" y="106" fill="#34d399" font-family="monospace" font-size="10">CONVERTED</text>
+      <rect x="440" y="124" width="134" height="48" rx="6" fill="#1e293b"/>
+      <rect x="440" y="184" width="134" height="48" rx="6" fill="#1e293b"/>
+    
+</svg>

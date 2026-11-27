@@ -29,23 +29,30 @@
         });
     }
 
-    // Archive Modal + Filter
-    const archiveModal = document.getElementById('archive-modal');
-    const openArchiveBtn = document.getElementById('open-archive-btn');
-    const closeArchiveBtn = document.getElementById('close-archive-btn');
+    // Jump inside #projects to the highlighted 13 shipped projects showcase
+    const projectsPanel = document.getElementById('projects');
+    const jumpShippedBtn = document.getElementById('jump-shipped-btn');
+    const shippedShowcase = document.getElementById('shipped-showcase');
 
-    if (openArchiveBtn && archiveModal) {
-        openArchiveBtn.addEventListener('click', () => archiveModal.classList.add('open'));
-    }
-    if (closeArchiveBtn && archiveModal) {
-        closeArchiveBtn.addEventListener('click', () => archiveModal.classList.remove('open'));
-    }
-    if (archiveModal) {
-        archiveModal.addEventListener('click', (e) => {
-            if (e.target === archiveModal) archiveModal.classList.remove('open');
+    if (jumpShippedBtn && shippedShowcase && projectsPanel) {
+        jumpShippedBtn.addEventListener('click', () => {
+            if (isDesktopDeck) {
+                gsap.to(projectsPanel, {
+                    scrollTo: { y: shippedShowcase, offsetY: 88 },
+                    duration: 0.75,
+                    ease: 'power3.inOut',
+                });
+            } else {
+                gsap.to(window, {
+                    scrollTo: { y: shippedShowcase, offsetY: 76 },
+                    duration: 0.75,
+                    ease: 'power3.inOut',
+                });
+            }
         });
     }
 
+    // Filter 13 Shipped Projects + refresh GSAP ScrollTrigger
     const filterPills = document.querySelectorAll('.filter-pill');
     const archiveItems = document.querySelectorAll('.archive-item');
     filterPills.forEach((pill) => {
@@ -57,6 +64,9 @@
                 const match = filter === 'all' || item.getAttribute('data-category') === filter;
                 item.style.display = match ? '' : 'none';
             });
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.refresh();
+            }
         });
     });
 
@@ -115,40 +125,50 @@
 
         if (prefersReducedMotion) {
             gsap.set(currentPanel, { autoAlpha: 0, zIndex: 1 });
-            gsap.set(nextPanel, { yPercent: 0, scale: 1, autoAlpha: 1, zIndex: 10 });
+            gsap.set(nextPanel, { xPercent: 0, yPercent: 0, scale: 1, autoAlpha: 1, zIndex: 10 });
             isAnimating = false;
             return;
         }
+
+        gsap.to('.gsap-shape', {
+            rotation: `+=${direction * 35}`,
+            duration: 0.85,
+            ease: 'power2.out',
+            overwrite: 'auto',
+        });
 
         gsap.set(currentPanel, { zIndex: 5 });
         gsap.set(nextPanel, {
             zIndex: 10,
             autoAlpha: 1,
             scale: 1,
-            yPercent: direction > 0 ? 100 : -100,
+            xPercent: direction > 0 ? 100 : -100,
+            yPercent: 0,
         });
 
         const tl = gsap.timeline({
             onComplete: () => {
-                gsap.set(currentPanel, { autoAlpha: 0, zIndex: 1, scale: 1, yPercent: 0 });
-                // Small cooldown prevents trackpad inertia from triggering a second jump
+                gsap.set(currentPanel, { autoAlpha: 0, zIndex: 1, scale: 1, xPercent: 0, yPercent: 0 });
+                if (nextPanel.id === 'projects') {
+                    ScrollTrigger.refresh();
+                }
                 setTimeout(() => {
                     isAnimating = false;
-                }, 140);
+                }, 130);
             },
         });
 
         tl.to(currentPanel, {
-            yPercent: direction > 0 ? -12 : 12,
-            scale: 0.96,
-            autoAlpha: 0.25,
-            duration: 0.72,
+            xPercent: direction > 0 ? -24 : 24,
+            scale: 0.95,
+            autoAlpha: 0.2,
+            duration: 0.78,
             ease: 'power3.inOut',
         }).to(
             nextPanel,
             {
-                yPercent: 0,
-                duration: 0.72,
+                xPercent: 0,
+                duration: 0.78,
                 ease: 'power3.inOut',
             },
             '<'
@@ -157,16 +177,16 @@
         if (nextItems.length) {
             tl.fromTo(
                 nextItems,
-                { y: direction > 0 ? 22 : -22, opacity: 0 },
+                { x: direction > 0 ? 34 : -34, opacity: 0 },
                 {
-                    y: 0,
+                    x: 0,
                     opacity: 1,
-                    duration: 0.48,
-                    stagger: 0.055,
+                    duration: 0.5,
+                    stagger: 0.05,
                     ease: 'power2.out',
                     clearProps: 'transform,opacity',
                 },
-                '-=0.35'
+                '-=0.38'
             );
         }
     }
@@ -211,23 +231,105 @@
     }
 
     window.addEventListener('keydown', (e) => {
-        if (archiveModal && archiveModal.classList.contains('open')) {
-            if (e.key === 'Escape') archiveModal.classList.remove('open');
-            return;
-        }
         if (!isDesktopDeck) return;
 
-        if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
             e.preventDefault();
             goToPanel(currentIndex + 1);
-        } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
             e.preventDefault();
             goToPanel(currentIndex - 1);
         }
     });
 
     // Hero entrance on load
+    // ── Interactive GSAP Micro-Animations (All Sections) ──────────────────
     if (!prefersReducedMotion) {
+        // 1. Split Hero Name into masked words & characters (GSAP.com SplitText style)
+        const heroNameWrap = document.getElementById('hero-name');
+        const heroNameText = document.getElementById('hero-name-text');
+        let heroChars = [];
+
+        const playNameReveal = () => {
+            if (!heroChars.length) return;
+            gsap.fromTo(
+                heroChars,
+                { yPercent: 115, rotateZ: 6, opacity: 0 },
+                {
+                    yPercent: 0,
+                    rotateZ: 0,
+                    opacity: 1,
+                    duration: 0.85,
+                    stagger: 0.032,
+                    ease: 'power4.out',
+                    overwrite: 'auto',
+                }
+            );
+        };
+
+        if (heroNameText) {
+            const words = heroNameText.textContent.trim().split(/\s+/);
+            heroNameText.innerHTML = words
+                .map((word) => {
+                    const charsHtml = word
+                        .split('')
+                        .map((ch) => `<span class="hero-char">${ch}</span>`)
+                        .join('');
+                    return `<span class="hero-word-mask">${charsHtml}</span>`;
+                })
+                .join('<span class="hero-char">&nbsp;</span>');
+
+            heroChars = Array.from(heroNameText.querySelectorAll('.hero-char'));
+            playNameReveal();
+
+            // Interactive per-letter wave on hover + click replay wave
+            heroChars.forEach((ch, idx) => {
+                ch.addEventListener('mouseenter', () => {
+                    gsap.to(ch, {
+                        y: -8,
+                        scale: 1.14,
+                        color: '#60a5fa',
+                        duration: 0.22,
+                        ease: 'power2.out',
+                    });
+                    [heroChars[idx - 1], heroChars[idx + 1]].forEach((neighbor) => {
+                        if (!neighbor) return;
+                        gsap.to(neighbor, { y: -3, duration: 0.22, ease: 'power2.out' });
+                    });
+                });
+                ch.addEventListener('mouseleave', () => {
+                    gsap.to(ch, {
+                        y: 0,
+                        scale: 1,
+                        color: '#ffffff',
+                        duration: 0.4,
+                        ease: 'elastic.out(1, 0.45)',
+                    });
+                    [heroChars[idx - 1], heroChars[idx + 1]].forEach((neighbor) => {
+                        if (!neighbor) return;
+                        gsap.to(neighbor, { y: 0, duration: 0.35, ease: 'elastic.out(1, 0.5)' });
+                    });
+                });
+            });
+
+            if (heroNameWrap) {
+                heroNameWrap.addEventListener('click', () => {
+                    gsap.fromTo(
+                        heroChars,
+                        { y: 0, color: '#ffffff' },
+                        {
+                            y: -10,
+                            color: '#60a5fa',
+                            duration: 0.24,
+                            stagger: { each: 0.025, from: 'start', yoyo: true, repeat: 1 },
+                            ease: 'power2.out',
+                        }
+                    );
+                });
+            }
+        }
+
+        // Hero entrance
         gsap.from('.hero-stagger', {
             y: 18,
             opacity: 0,
@@ -236,16 +338,121 @@
             ease: 'power3.out',
         });
         gsap.from('.hero-visual', {
-            y: 22,
+            x: 26,
             opacity: 0,
             duration: 0.7,
             delay: 0.12,
             ease: 'power3.out',
         });
+
+        // Continuous ambient float on SVG shapes + mouse-reactive parallax
+        const shapes = Array.from(document.querySelectorAll('.gsap-shape'));
+        shapes.forEach((shape, i) => {
+            gsap.to(shape, {
+                y: i % 2 === 0 ? -12 : 12,
+                duration: 3.2 + i * 0.6,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut',
+            });
+        });
+
+        const shapeQuickX = shapes.map((s) => gsap.quickTo(s, 'x', { duration: 0.6, ease: 'power2.out' }));
+        window.addEventListener('mousemove', (e) => {
+            if (window.innerWidth < 900) return;
+            const normX = e.clientX / window.innerWidth - 0.5;
+            shapes.forEach((shape, i) => {
+                const depth = Number(shape.getAttribute('data-depth')) || 12;
+                shapeQuickX[i](normX * depth);
+            });
+        });
+
+        // 2. Interactive spotlight + subtle 3D tilt on all section cards
+        document.querySelectorAll('.arch-card').forEach((card) => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mx', `${x}px`);
+                card.style.setProperty('--my', `${y}px`);
+                const rx = ((y / rect.height) - 0.5) * -4;
+                const ry = ((x / rect.width) - 0.5) * 4;
+                gsap.to(card, { y: -3, rotateX: rx, rotateY: ry, duration: 0.22, ease: 'power2.out' });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { y: 0, rotateX: 0, rotateY: 0, duration: 0.35, ease: 'power2.out' });
+            });
+        });
+
+        // 3. Interactive spring pop on skill & tech badges
+        document.querySelectorAll('#services .font-mono, #projects .font-mono').forEach((badge) => {
+            if (badge.closest('button, a')) return;
+            badge.classList.add('skill-chip');
+            badge.addEventListener('mouseenter', () => {
+                gsap.to(badge, { y: -2, scale: 1.06, duration: 0.18, ease: 'back.out(2)' });
+            });
+            badge.addEventListener('mouseleave', () => {
+                gsap.to(badge, { y: 0, scale: 1, duration: 0.22, ease: 'power2.out' });
+            });
+        });
+
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach((btn) => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const dx = (e.clientX - (rect.left + rect.width / 2)) * 0.12;
+                const dy = (e.clientY - (rect.top + rect.height / 2)) * 0.12;
+                gsap.to(btn, { x: dx, y: dy, duration: 0.2, ease: 'power2.out' });
+            });
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, { x: 0, y: 0, duration: 0.3, ease: 'elastic.out(1, 0.5)' });
+            });
+        });
     }
 
-    // Desktop: One-section-at-a-time GSAP Observer (prevents fast scroll skipping)
+    // Desktop: Horizontal Observer + Row-by-Row ScrollTrigger inside #projects
     const mm = gsap.matchMedia();
+
+    const setupProjectRowScroll = (scrollerTarget) => {
+        if (prefersReducedMotion) return [];
+        const cards = Array.from(document.querySelectorAll('.project-scroll-card'));
+        const triggers = [];
+
+        cards.forEach((card, idx) => {
+            const isLeftCol = idx % 2 === 0;
+            const tween = gsap.fromTo(
+                card,
+                {
+                    y: 36,
+                    x: isLeftCol ? -14 : 14,
+                    scale: 0.96,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    x: 0,
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.55,
+                    ease: 'power3.out',
+                    paused: true,
+                }
+            );
+
+            const st = ScrollTrigger.create({
+                trigger: card,
+                scroller: scrollerTarget,
+                start: 'top 90%',
+                end: 'bottom 10%',
+                onEnter: () => tween.play(),
+                onLeave: () => tween.reverse(),
+                onEnterBack: () => tween.play(),
+                onLeaveBack: () => tween.reverse(),
+            });
+            triggers.push(st);
+        });
+
+        return triggers;
+    };
 
     mm.add('(min-width: 900px)', () => {
         isDesktopDeck = true;
@@ -254,12 +461,23 @@
         panels.forEach((panel, i) => {
             gsap.set(panel, {
                 autoAlpha: i === 0 ? 1 : 0,
+                xPercent: 0,
                 yPercent: 0,
                 scale: 1,
                 zIndex: i === 0 ? 10 : 1,
             });
         });
         updateActiveUI(0);
+
+        const projectTriggers = setupProjectRowScroll(projectsPanel);
+        let lastInternalScrollTime = 0;
+
+        const onPanelScroll = () => {
+            lastInternalScrollTime = Date.now();
+        };
+        if (projectsPanel) {
+            projectsPanel.addEventListener('scroll', onPanelScroll, { passive: true });
+        }
 
         const canPanelScrollInternally = (panel, dir) => {
             const overflow = panel.scrollHeight - panel.clientHeight;
@@ -275,22 +493,26 @@
             tolerance: 18,
             preventDefault: false,
             onUp: () => {
-                if (archiveModal && archiveModal.classList.contains('open')) return;
                 const now = Date.now();
                 if (isAnimating || now - lastWheelTime < 450) return;
                 const activePanel = panels[currentIndex];
-                if (canPanelScrollInternally(activePanel, 1)) return;
+                if (canPanelScrollInternally(activePanel, 1) || now - lastInternalScrollTime < 280) return;
                 lastWheelTime = now;
                 goToPanel(currentIndex + 1);
             },
             onDown: () => {
-                if (archiveModal && archiveModal.classList.contains('open')) return;
                 const now = Date.now();
                 if (isAnimating || now - lastWheelTime < 450) return;
                 const activePanel = panels[currentIndex];
-                if (canPanelScrollInternally(activePanel, -1)) return;
+                if (canPanelScrollInternally(activePanel, -1) || now - lastInternalScrollTime < 280) return;
                 lastWheelTime = now;
                 goToPanel(currentIndex - 1);
+            },
+            onLeft: () => {
+                if (!isAnimating) goToPanel(currentIndex + 1);
+            },
+            onRight: () => {
+                if (!isAnimating) goToPanel(currentIndex - 1);
             },
         });
 
@@ -298,6 +520,8 @@
             isDesktopDeck = false;
             document.body.classList.remove('deck-locked');
             observer.kill();
+            projectTriggers.forEach((st) => st.kill());
+            if (projectsPanel) projectsPanel.removeEventListener('scroll', onPanelScroll);
             panels.forEach((p) => gsap.set(p, { clearProps: 'all' }));
         };
     });
@@ -306,6 +530,8 @@
     mm.add('(max-width: 899px)', () => {
         isDesktopDeck = false;
         document.body.classList.remove('deck-locked');
+
+        const mobileProjectTriggers = setupProjectRowScroll(window);
 
         panels.forEach((panel, idx) => {
             ScrollTrigger.create({
@@ -327,5 +553,9 @@
                 scrub: 0.2,
             },
         });
+
+        return () => {
+            mobileProjectTriggers.forEach((st) => st.kill());
+        };
     });
 })();

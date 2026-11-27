@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1017"/>
+      <stop offset="100%" stop-color="#141822"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" rx="14" fill="url(#bg)"/>
+  <rect width="640" height="360" rx="14" fill="url(#glow)"/>
+  <g opacity="0.16" stroke="#334155" stroke-width="1">
+    <path d="M0 90H640M0 180H640M0 270H640M160 0V360M320 0V360M480 0V360"/>
+  </g>
+  <!-- Browser/App Top Chrome -->
+  <rect x="28" y="24" width="584" height="312" rx="12" fill="#0b0d12" stroke="#252a36" stroke-width="1.5"/>
+  <path d="M28 36C28 29.3726 33.3726 24 40 24H600C606.627 24 612 29.3726 612 36V60H28V36Z" fill="#121620"/>
+  <circle cx="48" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="64" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="80" cy="42" r="4.5" fill="#3f3f46"/>
+  <rect x="104" y="34" width="210" height="16" rx="4" fill="#1a1f2c"/>
+  <text x="114" y="45" fill="#94a3b8" font-family="monospace" font-size="9.5">url-shortener // analytics</text>
+  <text x="594" y="45" text-anchor="end" fill="#10b981" font-family="monospace" font-size="9.5" font-weight="bold">CHOTO.CO</text>
+  
+      <rect x="48" y="80" width="544" height="58" rx="10" fill="#141822" stroke="#10b981" stroke-opacity="0.5"/>
+      <text x="70" y="114" fill="#94a3b8" font-family="monospace" font-size="12">https://choto.co/</text>
+      <text x="196" y="114" fill="#34d399" font-family="monospace" font-size="12" font-weight="bold">senior-dev</text>
+      <rect x="466" y="94" width="108" height="30" rx="6" fill="#10b981"/>
+      <text x="520" y="113" text-anchor="middle" fill="#052e16" font-family="sans-serif" font-size="11" font-weight="bold">Shorten Link</text>
+      <rect x="48" y="156" width="260" height="156" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="68" y="182" fill="#94a3b8" font-family="monospace" font-size="10">TOTAL REDIRECTS</text>
+      <text x="68" y="224" fill="#f8fafc" font-family="sans-serif" font-size="30" font-weight="bold">24,890</text>
+      <text x="68" y="254" fill="#34d399" font-family="monospace" font-size="10">CUSTOM ALIASES ACTIVE</text>
+      <rect x="326" y="156" width="266" height="156" rx="10" fill="#141822" stroke="#262c3a"/>
+      <path d="M350 280L396 248L442 256L488 210L534 222L570 184" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+      <text x="350" y="182" fill="#94a3b8" font-family="monospace" font-size="10">CLICK VELOCITY</text>
+    
+</svg>

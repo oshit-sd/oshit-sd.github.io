@@ -154,6 +154,12 @@ body {
         box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.65);
     }
 
+    .deck-panel.deck-panel-scroll {
+        display: block;
+        padding: 5.75rem 0 5.5rem;
+        scroll-behavior: smooth;
+    }
+
     .deck-panel[data-index="0"] {
         z-index: 1;
         border-top: 0;
@@ -168,14 +174,93 @@ body {
 
 /* ─── Cards & Buttons ────────────────────────────────────────────────────── */
 .arch-card {
+    position: relative;
+    overflow: hidden;
     background-color: var(--bg-card);
     border: 1px solid var(--border-subtle);
-    transition: border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease;
+    transition: border-color 0.22s ease, background-color 0.22s ease;
+    transform-style: preserve-3d;
+}
+
+.arch-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        320px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(59, 130, 246, 0.1),
+        transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.arch-card:hover::before {
+    opacity: 1;
 }
 
 .arch-card:hover {
     border-color: var(--border-strong);
     background-color: var(--bg-card-hover);
+}
+
+.project-preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.625rem;
+    border: 1px solid var(--border-subtle);
+    background-color: #0b0d12;
+    aspect-ratio: 16 / 9;
+}
+
+.project-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.arch-card:hover .project-preview img {
+    transform: scale(1.03);
+}
+
+.shipped-highlight-band {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 18, 22, 0.4) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+/* ─── Hero Split-Character Masked Name (GSAP.com style) ─────────────────── */
+.hero-name-wrap {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hero-word-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+}
+
+.hero-char {
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+.skill-chip {
+    display: inline-block;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    cursor: default;
+}
+
+.skill-chip:hover {
+    border-color: var(--accent-bright);
+    color: var(--ink-primary);
 }
 
 .btn-primary {

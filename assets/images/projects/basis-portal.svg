@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1017"/>
+      <stop offset="100%" stop-color="#141822"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" rx="14" fill="url(#bg)"/>
+  <rect width="640" height="360" rx="14" fill="url(#glow)"/>
+  <g opacity="0.16" stroke="#334155" stroke-width="1">
+    <path d="M0 90H640M0 180H640M0 270H640M160 0V360M320 0V360M480 0V360"/>
+  </g>
+  <!-- Browser/App Top Chrome -->
+  <rect x="28" y="24" width="584" height="312" rx="12" fill="#0b0d12" stroke="#252a36" stroke-width="1.5"/>
+  <path d="M28 36C28 29.3726 33.3726 24 40 24H600C606.627 24 612 29.3726 612 36V60H28V36Z" fill="#121620"/>
+  <circle cx="48" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="64" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="80" cy="42" r="4.5" fill="#3f3f46"/>
+  <rect x="104" y="34" width="210" height="16" rx="4" fill="#1a1f2c"/>
+  <text x="114" y="45" fill="#94a3b8" font-family="monospace" font-size="9.5">national-association // portal</text>
+  <text x="594" y="45" text-anchor="end" fill="#3b82f6" font-family="monospace" font-size="9.5" font-weight="bold">BASIS WEB PORTAL</text>
+  
+      <rect x="48" y="80" width="544" height="72" rx="10" fill="#141822" stroke="#3b82f6" stroke-opacity="0.45"/>
+      <text x="70" y="110" fill="#f8fafc" font-family="sans-serif" font-size="15" font-weight="bold">National Software Industry Portal</text>
+      <text x="70" y="130" fill="#60a5fa" font-family="monospace" font-size="10">Member Directory &#183; Events &#183; SSLCommerz &#183; SMS Gateway</text>
+      <rect x="48" y="168" width="170" height="144" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="66" y="196" fill="#94a3b8" font-family="monospace" font-size="9.5">MEMBERS</text>
+      <text x="66" y="232" fill="#f8fafc" font-family="sans-serif" font-size="24" font-weight="bold">2,100+</text>
+      <rect x="234" y="168" width="170" height="144" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="252" y="196" fill="#94a3b8" font-family="monospace" font-size="9.5">PAYMENTS</text>
+      <text x="252" y="232" fill="#60a5fa" font-family="sans-serif" font-size="20" font-weight="bold">SSLCommerz</text>
+      <rect x="420" y="168" width="172" height="144" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="438" y="196" fill="#94a3b8" font-family="monospace" font-size="9.5">ALERTS</text>
+      <text x="438" y="232" fill="#34d399" font-family="sans-serif" font-size="20" font-weight="bold">SMS API</text>
+    
+</svg>

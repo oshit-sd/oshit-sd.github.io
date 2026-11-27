@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1017"/>
+      <stop offset="100%" stop-color="#141822"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" rx="14" fill="url(#bg)"/>
+  <rect width="640" height="360" rx="14" fill="url(#glow)"/>
+  <g opacity="0.16" stroke="#334155" stroke-width="1">
+    <path d="M0 90H640M0 180H640M0 270H640M160 0V360M320 0V360M480 0V360"/>
+  </g>
+  <!-- Browser/App Top Chrome -->
+  <rect x="28" y="24" width="584" height="312" rx="12" fill="#0b0d12" stroke="#252a36" stroke-width="1.5"/>
+  <path d="M28 36C28 29.3726 33.3726 24 40 24H600C606.627 24 612 29.3726 612 36V60H28V36Z" fill="#121620"/>
+  <circle cx="48" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="64" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="80" cy="42" r="4.5" fill="#3f3f46"/>
+  <rect x="104" y="34" width="210" height="16" rx="4" fill="#1a1f2c"/>
+  <text x="114" y="45" fill="#94a3b8" font-family="monospace" font-size="9.5">pusher // multi-tenant-chat</text>
+  <text x="594" y="45" text-anchor="end" fill="#06b6d4" font-family="monospace" font-size="9.5" font-weight="bold">LIVE SUPPORT CHAT</text>
+  
+      <rect x="48" y="80" width="190" height="232" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="66" y="104" fill="#22d3ee" font-family="monospace" font-size="10">SCHOOL CHANNELS</text>
+      <rect x="66" y="122" width="154" height="34" rx="6" fill="#083344" stroke="#06b6d4" stroke-opacity="0.4"/>
+      <rect x="66" y="166" width="154" height="34" rx="6" fill="#1e293b"/>
+      <rect x="66" y="210" width="154" height="34" rx="6" fill="#1e293b"/>
+      <rect x="254" y="80" width="338" height="232" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="274" y="104" fill="#94a3b8" font-family="monospace" font-size="10">UNIFIED ADMIN THREAD</text>
+      <rect x="274" y="124" width="210" height="34" rx="8" fill="#1e293b"/>
+      <rect x="362" y="170" width="210" height="34" rx="8" fill="#0e7490"/>
+      <rect x="274" y="216" width="180" height="34" rx="8" fill="#1e293b"/>
+      <rect x="274" y="268" width="298" height="28" rx="6" fill="#0f172a" stroke="#334155"/>
+    
+</svg>

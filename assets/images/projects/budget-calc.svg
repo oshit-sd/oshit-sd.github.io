@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1017"/>
+      <stop offset="100%" stop-color="#141822"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" rx="14" fill="url(#bg)"/>
+  <rect width="640" height="360" rx="14" fill="url(#glow)"/>
+  <g opacity="0.16" stroke="#334155" stroke-width="1">
+    <path d="M0 90H640M0 180H640M0 270H640M160 0V360M320 0V360M480 0V360"/>
+  </g>
+  <!-- Browser/App Top Chrome -->
+  <rect x="28" y="24" width="584" height="312" rx="12" fill="#0b0d12" stroke="#252a36" stroke-width="1.5"/>
+  <path d="M28 36C28 29.3726 33.3726 24 40 24H600C606.627 24 612 29.3726 612 36V60H28V36Z" fill="#121620"/>
+  <circle cx="48" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="64" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="80" cy="42" r="4.5" fill="#3f3f46"/>
+  <rect x="104" y="34" width="210" height="16" rx="4" fill="#1a1f2c"/>
+  <text x="114" y="45" fill="#94a3b8" font-family="monospace" font-size="9.5">fintech-ux // real-time</text>
+  <text x="594" y="45" text-anchor="end" fill="#22c55e" font-family="monospace" font-size="9.5" font-weight="bold">BUDGET CALCULATOR</text>
+  
+      <rect x="48" y="80" width="260" height="232" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="68" y="108" fill="#4ade80" font-family="monospace" font-size="10">NET BALANCE</text>
+      <text x="68" y="148" fill="#f8fafc" font-family="sans-serif" font-size="30" font-weight="bold">$3,450.00</text>
+      <rect x="68" y="176" width="220" height="24" rx="4" fill="#1e293b"/>
+      <rect x="68" y="210" width="220" height="24" rx="4" fill="#1e293b"/>
+      <rect x="68" y="244" width="220" height="24" rx="4" fill="#1e293b"/>
+      <rect x="326" y="80" width="266" height="232" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="346" y="108" fill="#94a3b8" font-family="monospace" font-size="10">EXPENSE BREAKDOWN</text>
+      <rect x="346" y="134" width="220" height="14" rx="7" fill="#1e293b"/>
+      <rect x="346" y="134" width="160" height="14" rx="7" fill="#22c55e"/>
+      <rect x="346" y="170" width="220" height="14" rx="7" fill="#1e293b"/>
+      <rect x="346" y="170" width="110" height="14" rx="7" fill="#3b82f6"/>
+      <rect x="346" y="206" width="220" height="14" rx="7" fill="#1e293b"/>
+      <rect x="346" y="206" width="75" height="14" rx="7" fill="#f59e0b"/>
+    
+</svg>

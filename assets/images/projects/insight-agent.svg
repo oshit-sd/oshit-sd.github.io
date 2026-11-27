@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1017"/>
+      <stop offset="100%" stop-color="#141822"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" rx="14" fill="url(#bg)"/>
+  <rect width="640" height="360" rx="14" fill="url(#glow)"/>
+  <g opacity="0.16" stroke="#334155" stroke-width="1">
+    <path d="M0 90H640M0 180H640M0 270H640M160 0V360M320 0V360M480 0V360"/>
+  </g>
+  <!-- Browser/App Top Chrome -->
+  <rect x="28" y="24" width="584" height="312" rx="12" fill="#0b0d12" stroke="#252a36" stroke-width="1.5"/>
+  <path d="M28 36C28 29.3726 33.3726 24 40 24H600C606.627 24 612 29.3726 612 36V60H28V36Z" fill="#121620"/>
+  <circle cx="48" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="64" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="80" cy="42" r="4.5" fill="#3f3f46"/>
+  <rect x="104" y="34" width="210" height="16" rx="4" fill="#1a1f2c"/>
+  <text x="114" y="45" fill="#94a3b8" font-family="monospace" font-size="9.5">openrouter // bi-analytics</text>
+  <text x="594" y="45" text-anchor="end" fill="#8b5cf6" font-family="monospace" font-size="9.5" font-weight="bold">INSIGHT AGENT</text>
+  
+      <rect x="48" y="78" width="544" height="36" rx="8" fill="#161b26" stroke="#2d3344"/>
+      <circle cx="68" cy="96" r="6" fill="#8b5cf6"/>
+      <text x="84" y="100" fill="#e2e8f0" font-family="sans-serif" font-size="11">Prompt: "Show Q4 revenue growth &amp; top regions"</text>
+      <rect x="48" y="128" width="170" height="82" rx="8" fill="#141822" stroke="#262c3a"/>
+      <text x="64" y="150" fill="#94a3b8" font-family="monospace" font-size="9">REVENUE</text>
+      <text x="64" y="178" fill="#f8fafc" font-family="sans-serif" font-size="22" font-weight="bold">+38.4%</text>
+      <path d="M64 196L96 188L128 192L164 176L198 182" stroke="#8b5cf6" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="232" y="128" width="360" height="186" rx="8" fill="#141822" stroke="#262c3a"/>
+      <rect x="258" y="246" width="28" height="46" rx="4" fill="#3b82f6" opacity="0.6"/>
+      <rect x="302" y="218" width="28" height="74" rx="4" fill="#6366f1" opacity="0.8"/>
+      <rect x="346" y="186" width="28" height="106" rx="4" fill="#8b5cf6"/>
+      <rect x="390" y="204" width="28" height="88" rx="4" fill="#8b5cf6" opacity="0.75"/>
+      <rect x="434" y="164" width="28" height="128" rx="4" fill="#a78bfa"/>
+      <rect x="478" y="192" width="28" height="100" rx="4" fill="#3b82f6"/>
+      <rect x="522" y="152" width="28" height="140" rx="4" fill="#8b5cf6"/>
+      <rect x="48" y="222" width="170" height="92" rx="8" fill="#141822" stroke="#262c3a"/>
+      <circle cx="100" cy="268" r="26" stroke="#2d3344" stroke-width="10"/>
+      <circle cx="100" cy="268" r="26" stroke="#8b5cf6" stroke-width="10" stroke-dasharray="110 60"/>
+      <text x="142" y="264" fill="#cbd5e1" font-family="monospace" font-size="9">ADAPTIVE</text>
+      <text x="142" y="279" fill="#a78bfa" font-family="monospace" font-size="9">CHART.JS</text>
+    
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1017"/>
+      <stop offset="100%" stop-color="#141822"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" rx="14" fill="url(#bg)"/>
+  <rect width="640" height="360" rx="14" fill="url(#glow)"/>
+  <g opacity="0.16" stroke="#334155" stroke-width="1">
+    <path d="M0 90H640M0 180H640M0 270H640M160 0V360M320 0V360M480 0V360"/>
+  </g>
+  <!-- Browser/App Top Chrome -->
+  <rect x="28" y="24" width="584" height="312" rx="12" fill="#0b0d12" stroke="#252a36" stroke-width="1.5"/>
+  <path d="M28 36C28 29.3726 33.3726 24 40 24H600C606.627 24 612 29.3726 612 36V60H28V36Z" fill="#121620"/>
+  <circle cx="48" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="64" cy="42" r="4.5" fill="#3f3f46"/>
+  <circle cx="80" cy="42" r="4.5" fill="#3f3f46"/>
+  <rect x="104" y="34" width="210" height="16" rx="4" fill="#1a1f2c"/>
+  <text x="114" y="45" fill="#94a3b8" font-family="monospace" font-size="9.5">laravel-vue // retail-pos</text>
+  <text x="594" y="45" text-anchor="end" fill="#3b82f6" font-family="monospace" font-size="9.5" font-weight="bold">E-COMMERCE &amp; POS</text>
+  
+      <rect x="48" y="78" width="340" height="236" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="66" y="102" fill="#94a3b8" font-family="monospace" font-size="10">INVENTORY &amp; BATCH GRID</text>
+      <rect x="66" y="116" width="144" height="82" rx="8" fill="#1b2232" stroke="#2c3549"/>
+      <rect x="80" y="132" width="60" height="8" rx="4" fill="#e2e8f0"/>
+      <rect x="80" y="148" width="90" height="6" rx="3" fill="#64748b"/>
+      <text x="80" y="182" fill="#60a5fa" font-family="monospace" font-size="11" font-weight="bold">STOCK: 142</text>
+      <rect x="224" y="116" width="144" height="82" rx="8" fill="#1b2232" stroke="#2c3549"/>
+      <rect x="238" y="132" width="70" height="8" rx="4" fill="#e2e8f0"/>
+      <rect x="238" y="148" width="84" height="6" rx="3" fill="#64748b"/>
+      <text x="238" y="182" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">BATCH #A09</text>
+      <rect x="66" y="212" width="302" height="86" rx="8" fill="#1b2232"/>
+      <path d="M84 276L140 254L196 262L252 232L310 242L350 222" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+      <rect x="404" y="78" width="188" height="236" rx="10" fill="#141822" stroke="#262c3a"/>
+      <text x="422" y="102" fill="#60a5fa" font-family="monospace" font-size="10">POS CHECKOUT</text>
+      <rect x="422" y="118" width="152" height="24" rx="4" fill="#1e293b"/>
+      <rect x="422" y="150" width="152" height="24" rx="4" fill="#1e293b"/>
+      <rect x="422" y="182" width="152" height="24" rx="4" fill="#1e293b"/>
+      <line x1="422" y1="230" x2="574" y2="230" stroke="#2d3344"/>
+      <text x="422" y="252" fill="#f8fafc" font-family="sans-serif" font-size="14" font-weight="bold">TOTAL: $482.00</text>
+      <rect x="422" y="268" width="152" height="32" rx="6" fill="#3b82f6"/>
+      <text x="498" y="288" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">Complete Sale</text>
+    
+</svg>
