@@ -150,6 +150,16 @@ body {
 .deck-panel[data-index="4"] { background-color: #0d0f13; }
 .deck-panel[data-index="5"] { background-color: #101217; }
 
+/* ─── Section-Change Only Transition Wipe ────────────────────────────────── */
+.transition-bg-wipe {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 35;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
 @media (min-width: 900px) {
     .deck-stage {
         height: 100vh;

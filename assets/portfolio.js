@@ -276,10 +276,17 @@
         }
     }
 
+    const sectionAccents = ['#3b82f6', '#60a5fa', '#10b981', '#818cf8', '#f59e0b', '#22d3ee'];
+
     function updateActiveUI(index) {
         if (currentIndex !== index) {
             currentIndex = index;
             triggerInnerForIndex(index);
+            gsap.to('#scroll-progress', {
+                backgroundColor: sectionAccents[index] || '#3b82f6',
+                duration: 0.45,
+                ease: 'power2.out',
+            });
         }
         const activePanel = panels[index];
         if (!activePanel) return;
@@ -494,30 +501,57 @@
                 panel.scrollTop = 0;
             });
 
-            sliderSpan = isGridView ? 0 : Math.max(1.2, (visibleCards.length - 1) * 0.28);
+            sliderSpan = isGridView ? 0 : Math.max(1.8, (visibleCards.length - 1) * 0.55);
             const startOffset = activeLoop ? activeLoop.times[0] || 0 : 0;
             const endOffset = activeLoop
                 ? startOffset + activeLoop.duration() * ((visibleCards.length - 1) / Math.max(1, visibleCards.length))
                 : 0;
 
+            const slideDur = 1.8;
+            const dwell = 0.35;
+            const wipeEl = document.getElementById('section-transition-wipe');
+
             sectionTimes = {};
-            masterTl = gsap.timeline({ defaults: { ease: 'none' } });
+            masterTl = gsap.timeline({ defaults: { ease: 'sine.inOut', force3D: true } });
 
-            // 0 -> 1: Home -> Services (right-to-left)
+            const addSectionSlide = (fromPanel, toPanel, startAt, wipeColor) => {
+                const toInner = toPanel.querySelector(':scope > .site-container');
+                masterTl
+                    .to(fromPanel, { xPercent: -20, scale: 0.94, opacity: 0.2, duration: slideDur }, startAt)
+                    .to(toPanel, { xPercent: 0, duration: slideDur }, startAt);
+
+                if (toInner && !prefersReducedMotion) {
+                    masterTl.fromTo(toInner, { xPercent: 5 }, { xPercent: 0, duration: slideDur }, startAt);
+                }
+
+                if (wipeEl && !prefersReducedMotion) {
+                    const grad = `linear-gradient(90deg, transparent 0%, ${wipeColor} 48%, transparent 100%)`;
+                    masterTl
+                        .set(wipeEl, { background: grad }, startAt)
+                        .fromTo(
+                            wipeEl,
+                            { xPercent: 85, opacity: 0 },
+                            { xPercent: 0, opacity: 1, duration: slideDur * 0.5, ease: 'sine.in' },
+                            startAt
+                        )
+                        .to(
+                            wipeEl,
+                            { xPercent: -85, opacity: 0, duration: slideDur * 0.5, ease: 'sine.out' },
+                            startAt + slideDur * 0.5
+                        );
+                }
+                return startAt + slideDur;
+            };
+
+            // 0 -> Services (right-to-left)
             sectionTimes.home = 0;
-            masterTl
-                .to(panels[0], { xPercent: -18, scale: 0.95, opacity: 0.25, duration: 1 }, 0)
-                .to(panels[1], { xPercent: 0, duration: 1 }, 0);
-            sectionTimes.services = 1;
+            sectionTimes.services = addSectionSlide(panels[0], panels[1], dwell, 'rgba(59, 130, 246, 0.18)');
 
-            // 1 -> 2: Services -> Projects (right-to-left)
-            masterTl
-                .to(panels[1], { xPercent: -18, scale: 0.95, opacity: 0.25, duration: 1 }, 1)
-                .to(panels[2], { xPercent: 0, duration: 1 }, 1);
-            sectionTimes.projects = 2;
-            projectsStartTime = 2;
+            // Services -> Projects (right-to-left)
+            sectionTimes.projects = addSectionSlide(panels[1], panels[2], sectionTimes.services + dwell, 'rgba(16, 185, 129, 0.16)');
+            projectsStartTime = sectionTimes.projects + 0.2;
 
-            // 2 -> 2 + sliderSpan: Projects horizontal infinite slider scrub
+            // Projects horizontal infinite slider scrub
             const sliderObj = { progress: 0 };
             if (!isGridView && sliderSpan > 0 && activeLoop) {
                 masterTl.to(
@@ -538,24 +572,13 @@
             }
             projectsEndTime = projectsStartTime + sliderSpan;
 
-            // Remaining sections: Experience, About, Contact (each slides right-to-left)
-            const tExp = projectsEndTime;
-            masterTl
-                .to(panels[2], { xPercent: -18, scale: 0.95, opacity: 0.25, duration: 1 }, tExp)
-                .to(panels[3], { xPercent: 0, duration: 1 }, tExp);
-            sectionTimes.experience = tExp + 1;
+            // Projects -> Experience -> About -> Contact (right-to-left)
+            sectionTimes.experience = addSectionSlide(panels[2], panels[3], projectsEndTime + dwell, 'rgba(129, 140, 248, 0.18)');
+            sectionTimes.about = addSectionSlide(panels[3], panels[4], sectionTimes.experience + dwell, 'rgba(245, 158, 11, 0.14)');
+            sectionTimes.contact = addSectionSlide(panels[4], panels[5], sectionTimes.about + dwell, 'rgba(34, 211, 238, 0.18)');
 
-            const tAbout = tExp + 1;
-            masterTl
-                .to(panels[3], { xPercent: -18, scale: 0.95, opacity: 0.25, duration: 1 }, tAbout)
-                .to(panels[4], { xPercent: 0, duration: 1 }, tAbout);
-            sectionTimes.about = tAbout + 1;
-
-            const tContact = tAbout + 1;
-            masterTl
-                .to(panels[4], { xPercent: -18, scale: 0.95, opacity: 0.25, duration: 1 }, tContact)
-                .to(panels[5], { xPercent: 0, duration: 1 }, tContact);
-            sectionTimes.contact = tContact + 1;
+            // Final dwell at Contact
+            masterTl.to({}, { duration: dwell }, sectionTimes.contact);
 
             const totalDur = masterTl.duration();
             const sectionStops = [
@@ -570,18 +593,17 @@
             masterST = ScrollTrigger.create({
                 trigger: '#deck-stage',
                 pin: true,
-                scrub: 0.75,
+                scrub: 1.45,
                 anticipatePin: 1,
                 start: 'top top',
-                end: () => `+=${totalDur * window.innerHeight * 0.9}`,
+                end: () => `+=${totalDur * window.innerHeight * 1.3}`,
                 animation: masterTl,
                 snap: {
                     snapTo: (value) => {
                         const t = value * totalDur;
-                        if (!isGridView && t >= projectsStartTime && t <= projectsEndTime && visibleCards.length > 1) {
-                            const localP = (t - projectsStartTime) / (projectsEndTime - projectsStartTime);
-                            const snappedCard = Math.round(localP * (visibleCards.length - 1)) / (visibleCards.length - 1);
-                            return (projectsStartTime + snappedCard * (projectsEndTime - projectsStartTime)) / totalDur;
+                        // Allow uninterrupted gliding inside the Projects slider
+                        if (!isGridView && t >= projectsStartTime && t <= projectsEndTime) {
+                            return value;
                         }
                         let closest = sectionStops[0];
                         let minD = Infinity;
@@ -594,19 +616,19 @@
                         });
                         return closest / totalDur;
                     },
-                    duration: { min: 0.2, max: 0.48 },
-                    delay: 0.12,
-                    ease: 'power2.out',
+                    duration: { min: 0.35, max: 0.7 },
+                    delay: 0.28,
+                    ease: 'sine.inOut',
                 },
                 onUpdate: (self) => {
                     gsap.set('#scroll-progress', { scaleX: self.progress });
                     const curTime = masterTl.time();
                     let activeIdx = 0;
-                    if (curTime >= sectionTimes.contact - 0.35) activeIdx = 5;
-                    else if (curTime >= sectionTimes.about - 0.35) activeIdx = 4;
-                    else if (curTime >= sectionTimes.experience - 0.35) activeIdx = 3;
-                    else if (curTime >= sectionTimes.projects - 0.35) activeIdx = 2;
-                    else if (curTime >= sectionTimes.services - 0.35) activeIdx = 1;
+                    if (curTime >= sectionTimes.contact - 0.55) activeIdx = 5;
+                    else if (curTime >= sectionTimes.about - 0.55) activeIdx = 4;
+                    else if (curTime >= sectionTimes.experience - 0.55) activeIdx = 3;
+                    else if (curTime >= sectionTimes.projects - 0.55) activeIdx = 2;
+                    else if (curTime >= sectionTimes.services - 0.55) activeIdx = 1;
                     updateActiveUI(activeIdx);
                 },
             });
