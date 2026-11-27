@@ -239,6 +239,8 @@
                                 <span
                                     class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300">Python</span>
                                 <span
+                                    class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300">Node.js</span>
+                                <span
                                     class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300">AWS</span>
                                 <span
                                     class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300">Docker</span>
@@ -343,6 +345,8 @@
                         <div class="flex flex-wrap gap-1.5">
                             <span
                                 class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300">Laravel</span>
+                            <span
+                                class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300">Node.js</span>
                             <span
                                 class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300">Next.js</span>
                             <span
@@ -475,542 +479,406 @@
             </div>
         </section>
 
-        <!-- 03. PROJECTS (Featured + Highlighted 13 Shipped Projects, 2 per row with overview previews) -->
+        <!-- 03. PROJECTS (GSAP Infinite Card Slider: Draggable + Snap + Auto-Play) -->
         <section id="projects" data-section="projects" data-label="Projects" data-index="2"
-            class="deck-panel deck-panel-scroll">
+            class="deck-panel deck-panel-projects">
             <div class="site-container">
-                <div class="panel-header flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
+                <div class="panel-header flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-6">
                     <div>
-                        <p class="font-mono text-blue-400 text-xs tracking-widest uppercase mb-1.5">03 / Selected Work
-                            &amp; Open Projects</p>
+                        <p class="font-mono text-blue-400 text-xs tracking-widest uppercase mb-1">03 / Selected Work &amp; 13 Shipped Projects</p>
                         <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
-                            Featured &amp; Key Projects
+                            Featured &amp; Shipped Systems
                         </h2>
                     </div>
-                    <button id="jump-shipped-btn"
-                        class="btn-secondary px-4 py-2.5 rounded-md text-xs font-mono uppercase tracking-wider inline-flex items-center gap-2 self-start sm:self-auto">
-                        <span>Scroll to 13 Shipped Projects</span>
-                        <i class="fas fa-arrow-down text-[10px]"></i>
-                    </button>
-                </div>
 
-                <!-- Featured 4 (2 per row) -->
-                <div class="grid md:grid-cols-2 gap-6 mb-12">
-                    <article class="project-scroll-card arch-card rounded-xl p-5 flex flex-col">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/insight-agent.png" alt="Insight Agent live app screenshot"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">AI Dashboard
-                                Generator</span>
-                            <a href="https://insight-agent-oshit.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="text-xs font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1.5">
-                                View Live <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1.5">Insight Agent</h3>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            AI-driven dashboard system that dynamically transforms natural language prompts into
-                            structured visual analytics via the OpenRouter API—no predefined templates, decoupled
-                            frontend architecture.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">OpenRouter
-                                API</span>
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue
-                                3</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">TailwindCSS</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Chart.js</span>
-                        </div>
-                    </article>
-
-                    <article class="project-scroll-card arch-card rounded-xl p-5 flex flex-col">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/rog-sheba.png" alt="Rog Sheba live app screenshot"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">AI Healthcare
-                                Assistant</span>
-                            <a href="https://rog-sheba-oshit.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="text-xs font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1.5">
-                                View Live <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1.5">Rog Sheba</h3>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Intelligent healthcare assistant delivering contextual medical suggestions, symptom
-                            analysis,
-                            and doctor recommendations with a stateless REST + OpenRouter API architecture.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">OpenRouter
-                                API</span>
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue
-                                3</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">TailwindCSS</span>
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">REST
-                                API</span>
-                        </div>
-                    </article>
-
-                    <article class="project-scroll-card arch-card rounded-xl p-5 flex flex-col">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/ecommerce-pos.png"
-                                alt="E-Commerce and POS System overview preview" loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-zinc-400">E-Commerce</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Retail &amp; POS</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1.5">E-Commerce &amp; POS System</h3>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Full-featured retail platform with integrated POS, product &amp; batch inventory tracking,
-                            order processing, financial reporting, and multi-gateway payment support.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js
-                                3</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">MySQL</span>
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">REST
-                                API</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Bootstrap</span>
-                        </div>
-                    </article>
-
-                    <article class="project-scroll-card arch-card rounded-xl p-5 flex flex-col">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/epayment-system.svg" alt="ePayment System overview preview"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-zinc-400">FinTech</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Institutional</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1.5">ePayment System</h3>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Centralized digital payment platform managing admission, academic &amp; hostel fee
-                            collection, automated invoices, payment verification, and ShurjoPay / SSLCommerz
-                            integrations.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">ShurjoPay</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">SSLCommerz</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">MySQL</span>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Highlighted All 13 Shipped Projects Section (2 per row with overview previews) -->
-                <div id="shipped-showcase" class="shipped-highlight-band rounded-2xl p-6 sm:p-7 mb-7">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                        <div>
-                            <span
-                                class="inline-block font-mono text-[11px] uppercase tracking-widest text-blue-400 mb-1">
-                                Highlighted Archive &middot; 2 Per Row
-                            </span>
-                            <h3 class="font-display text-2xl sm:text-3xl font-bold text-white">
-                                All 13 Shipped Projects
-                            </h3>
-                            <p class="text-zinc-400 text-xs sm:text-sm mt-1">
-                                Production microservices, multi-tenant SaaS platforms, government portals, and live
-                                public web apps.
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter 13 shipped projects">
-                            <button class="filter-pill active" data-filter="all">All (13)</button>
-                            <button class="filter-pill" data-filter="enterprise">Key &amp; SaaS (6)</button>
-                            <button class="filter-pill" data-filter="gov">Gov &amp; Portals (3)</button>
-                            <button class="filter-pill" data-filter="public">Public Apps (4)</button>
-                        </div>
+                    <div class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Filter projects">
+                        <button class="filter-pill active" data-filter="all">All (17)</button>
+                        <button class="filter-pill" data-filter="featured">Featured (4)</button>
+                        <button class="filter-pill" data-filter="enterprise">Key &amp; SaaS (6)</button>
+                        <button class="filter-pill" data-filter="gov">Gov &amp; Portals (3)</button>
+                        <button class="filter-pill" data-filter="public">Public Apps (4)</button>
                     </div>
                 </div>
 
-                <div id="shipped-grid" class="grid md:grid-cols-2 gap-6 mb-10">
-                    <!-- 1. eCook Mobile Backend -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="enterprise">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/ecook-backend.svg" alt="eCook Mobile Backend preview"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span
-                                class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Microservice</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Food-Tech API</span>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">eCook Mobile Backend</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Scalable microservice backend for a food-tech mobile app handling recipe management, user
-                            interactions, and containerized Docker deployments for horizontal scale.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Python</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Docker</span>
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">REST
-                                API</span>
-                        </div>
-                    </article>
+                <!-- Infinite Card Slider Viewport -->
+                <div class="slider-viewport mb-5">
+                    <div id="project-slider-track" class="slider-track">
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="featured">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/insight-agent.png" alt="Insight Agent live app screenshot" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">AI Analytics</span>
+                                        <a href="https://insight-agent-oshit.vercel.app" target="_blank" rel="noopener noreferrer"
+                                            class="text-[11px] font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1">
+                                            Live <i class="fas fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </a>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">Insight Agent</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Transforms natural language prompts into adaptive visual analytics via OpenRouter API &amp; Chart.js.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">OpenRouter</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue 3</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Chart.js</span>
+                                    </div>
+                                </article>
 
-                    <!-- 2. School Management SaaS -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="enterprise">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/school-saas.svg" alt="School Management SaaS preview"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Multi-tenant
-                                SaaS</span>
-                            <span class="text-[11px] font-mono text-zinc-500">EdTech ERP</span>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">School Management SaaS</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Multi-tenant SaaS for end-to-end school operations: admissions, attendance, hostel, exams,
-                            financial reporting, and role-based access control.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">MySQL</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Multi-tenant</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="featured">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/rog-sheba.png" alt="Rog Sheba live app screenshot" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">AI Healthcare</span>
+                                        <a href="https://rog-sheba-oshit.vercel.app" target="_blank" rel="noopener noreferrer"
+                                            class="text-[11px] font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1">
+                                            Live <i class="fas fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </a>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">Rog Sheba</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Contextual healthcare guidance, symptom analysis &amp; doctor recommendations with stateless OpenRouter API.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">OpenRouter</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue 3</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">REST API</span>
+                                    </div>
+                                </article>
 
-                    <!-- 3. Project Management System -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="enterprise">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/project-mgmt.svg" alt="Project Management System preview"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Productivity
-                                SaaS</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Team Workflow</span>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">Project Management System</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Collaborative task and workflow management platform with team assignment, milestone
-                            tracking, progress monitoring, and reporting.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">MySQL</span>
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">REST
-                                API</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="featured">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/ecommerce-pos.png" alt="E-Commerce and POS System overview preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-400">E-Commerce &amp; POS</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">Production</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">E-Commerce &amp; POS System</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Retail storefront with integrated POS, batch inventory tracking, analytics &amp; multi-gateway payments.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue.js 3</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">MySQL</span>
+                                    </div>
+                                </article>
 
-                    <!-- 4. eCook Notification System -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="enterprise">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/ecook-notification.svg"
-                                alt="eCook Notification System preview" loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Notification
-                                Engine</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Push &amp; In-App</span>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">eCook Notification System</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Firebase Cloud Messaging push delivery and login-triggered in-app popup notification engine
-                            for mobile and web users.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Python</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js</span>
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">FCM</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="featured">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/epayment-system.svg" alt="ePayment System overview preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-400">FinTech</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">Institutional</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">ePayment System</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Automated fee collection, invoices &amp; ShurjoPay / SSLCommerz gateway reconciliation for institutions.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">ShurjoPay</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">SSLCommerz</span>
+                                    </div>
+                                </article>
 
-                    <!-- 5. Live Support Chat -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="enterprise">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/live-support-chat.svg" alt="Live Support Chat preview"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Real-Time</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Multi-School</span>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">Live Support Chat</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Multi-tenant student–school chat system embeddable across multiple systems via a single
-                            URL, managed through a unified admin panel.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Pusher</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">MySQL</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="enterprise">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/ecook-backend.svg" alt="eCook Mobile Backend preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Microservice</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">Food-Tech</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">eCook Mobile Backend</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Containerized Laravel &amp; Python microservice API built for mobile scale and horizontal deployment.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Python</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Docker</span>
+                                    </div>
+                                </article>
 
-                    <!-- 6. Choto.co -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="enterprise">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/choto-co.png" alt="Choto.co URL shortener preview"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Utility</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Link Analytics</span>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">Choto.co</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Minimal and fast URL shortening service featuring instant short link generation, custom
-                            alias support, and per-link click analytics.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">MySQL</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="enterprise">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/school-saas.svg" alt="School Management SaaS preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Multi-tenant SaaS</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">EdTech ERP</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">School Management SaaS</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Multi-tenant SaaS covering admissions, attendance, hostel, exams, RBAC &amp; fee operations.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue.js</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">MySQL</span>
+                                    </div>
+                                </article>
 
-                    <!-- 7. BASIS Web Portal -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="gov">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/basis-portal.png" alt="BASIS Web Portal preview"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">National
-                                Portal</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Gov / Org</span>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">BASIS Web Portal</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            National software industry association portal with member management, event workflows,
-                            SSLCommerz payment integration, and SMS gateway notifications.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">SSLCommerz</span>
-                            <span class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">SMS
-                                API</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="enterprise">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/project-mgmt.svg" alt="Project Management System preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Productivity SaaS</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">Workflow</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">Project Management System</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Collaborative task, milestone &amp; team workflow platform built with Laravel and Vue.js.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue.js</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">REST API</span>
+                                    </div>
+                                </article>
 
-                    <!-- 8. NSD E-Tender -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="gov">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/nsd-etender.svg" alt="NSD E-Tender platform preview"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Gov /
-                                Tender</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Procurement</span>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">NSD E-Tender</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Digital tendering platform with end-to-end online tender submission, evaluation workflow,
-                            and SSLCommerz-integrated tender fee collection.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">MySQL</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">SSLCommerz</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="enterprise">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/ecook-notification.svg" alt="eCook Notification System preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Notification Engine</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">FCM Push</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">eCook Notification System</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Firebase Cloud Messaging push delivery &amp; login-triggered in-app popup engine.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Python</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue.js</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">FCM</span>
+                                    </div>
+                                </article>
 
-                    <!-- 9. Teachers Portal -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="gov">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/teachers-portal.png" alt="Teachers Portal preview"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">EdTech</span>
-                            <span class="text-[11px] font-mono text-zinc-500">Redis Cached</span>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">Teachers Portal</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Post-training skill retention and collaborative peer exchange platform for educators backed
-                            by Redis sessions and optimized MySQL queries.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Laravel</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Vue.js</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">MySQL</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Redis</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="enterprise">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/live-support-chat.svg" alt="Live Support Chat preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Real-Time</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">Multi-School</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">Live Support Chat</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Multi-tenant student–school chat embedded via single URL with unified admin panel.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue.js</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Pusher</span>
+                                    </div>
+                                </article>
 
-                    <!-- 10. Budget Calculator -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="public">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/budget-calc.png"
-                                alt="Budget Calculator live app screenshot" loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Public App</span>
-                            <a href="https://budget-calculate.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="text-xs font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1.5">
-                                View Live <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">Budget Calculator</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Real-time financial insights with live expense breakdown, instant calculations, and a
-                            distraction-free financial UX.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">JavaScript</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Tailwind</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="enterprise">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/choto-co.png" alt="Choto.co URL shortener preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Utility</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">Analytics</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">Choto.co</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Minimal &amp; fast URL shortening service with custom aliases and click analytics.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue.js</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">MySQL</span>
+                                    </div>
+                                </article>
 
-                    <!-- 11. SkillUp Platform -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="public">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/skillup.png" alt="SkillUp Platform live app screenshot"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Public App</span>
-                            <a href="https://skill-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="text-xs font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1.5">
-                                View Live <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">SkillUp Platform</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Structured course-based learning platform with clear progression paths optimized for
-                            learner retention and engagement.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">JavaScript</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Tailwind</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="gov">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/basis-portal.png" alt="BASIS Web Portal preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">National Portal</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">Gov / Org</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">BASIS Web Portal</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        National software industry association portal with SSLCommerz &amp; SMS API notifications.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">SSLCommerz</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">SMS API</span>
+                                    </div>
+                                </article>
 
-                    <!-- 12. FollowUp System -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="public">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/followup.png" alt="FollowUp System live app screenshot"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Public App</span>
-                            <a href="https://follow-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="text-xs font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1.5">
-                                View Live <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">FollowUp System</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Streamlined client tracking and lead pipeline workflow tool built for daily follow-up
-                            clarity and productivity.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">JavaScript</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Tailwind</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="gov">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/nsd-etender.svg" alt="NSD E-Tender platform preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Gov / Tender</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">Procurement</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">NSD E-Tender</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Digital tendering &amp; evaluation platform with SSLCommerz-integrated tender fee collection.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue.js</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">SSLCommerz</span>
+                                    </div>
+                                </article>
 
-                    <!-- 13. Real-time Chat App -->
-                    <article class="project-scroll-card archive-item arch-card rounded-xl p-5 flex flex-col"
-                        data-category="public">
-                        <div class="project-preview mb-4">
-                            <img src="assets/images/projects/chat-app.png" alt="Real-time Chat App live screenshot"
-                                loading="lazy">
-                        </div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400">Public App</span>
-                            <a href="https://chat-app-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="text-xs font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1.5">
-                                View Live <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
-                        <h4 class="text-white font-bold text-lg mb-1.5">Real-time Chat App</h4>
-                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed flex-1 mb-4">
-                            Instant messaging with sub-100ms WebSocket delivery and event-driven, room-based isolation.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Socket.io</span>
-                            <span
-                                class="px-2 py-0.5 rounded bg-zinc-900 text-[11px] font-mono text-zinc-400">Node.js</span>
-                        </div>
-                    </article>
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="gov">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/teachers-portal.png" alt="Teachers Portal preview" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">EdTech</span>
+                                        <span class="text-[10px] font-mono text-zinc-500">Redis Cached</span>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">Teachers Portal</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Post-training skill retention &amp; peer exchange platform backed by Redis and MySQL.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Laravel</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Vue.js</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Redis</span>
+                                    </div>
+                                </article>
+
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="public">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/budget-calc.png" alt="Budget Calculator live app screenshot" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Public App</span>
+                                        <a href="https://budget-calculate.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                            class="text-[11px] font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1">
+                                            Live <i class="fas fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </a>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">Budget Calculator</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Real-time financial breakdown &amp; instant calculation with distraction-free UX.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">JavaScript</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Tailwind</span>
+                                    </div>
+                                </article>
+
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="public">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/skillup.png" alt="SkillUp Platform live app screenshot" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Public App</span>
+                                        <a href="https://skill-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                            class="text-[11px] font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1">
+                                            Live <i class="fas fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </a>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">SkillUp Platform</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Structured learning platform with course progression paths for modern users.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">JavaScript</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Tailwind</span>
+                                    </div>
+                                </article>
+
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="public">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/followup.png" alt="FollowUp System live app screenshot" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Public App</span>
+                                        <a href="https://follow-up-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                            class="text-[11px] font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1">
+                                            Live <i class="fas fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </a>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">FollowUp System</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Streamlined client tracking and lead pipeline workflow optimization tool.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">JavaScript</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Tailwind</span>
+                                    </div>
+                                </article>
+
+                                <article class="slider-card archive-item arch-card rounded-xl p-4 flex flex-col" data-category="public">
+                                    <div class="project-preview mb-3">
+                                        <img src="assets/images/projects/chat-app.png" alt="Real-time Chat App live screenshot" loading="lazy">
+                                    </div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400">Public App</span>
+                                        <a href="https://chat-app-oshit.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                            class="text-[11px] font-medium text-zinc-300 hover:text-white inline-flex items-center gap-1">
+                                            Live <i class="fas fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </a>
+                                    </div>
+                                    <h3 class="text-sm font-bold text-white mb-1">Real-time Chat App</h3>
+                                    <p class="text-zinc-400 text-xs leading-snug line-clamp-2 mb-2.5 flex-1">
+                                        Sub-100ms WebSocket messaging with event-driven room-based isolation.
+                                    </p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Socket.io</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-900 text-[10px] font-mono text-zinc-400">Node.js</span>
+                                    </div>
+                                </article>
+                    </div>
                 </div>
 
-                <!-- Next Section Cue -->
-                <div class="flex items-center justify-between pt-4 border-t border-zinc-800/80">
-                    <span class="text-xs font-mono text-zinc-500">End of Projects &middot; 17 Systems Total</span>
-                    <button data-jump="experience"
-                        class="btn-primary px-5 py-2.5 rounded-md font-semibold text-xs inline-flex items-center gap-2">
-                        <span>Next: Work Experience</span>
-                        <i class="fas fa-arrow-right text-[10px]"></i>
-                    </button>
+                <!-- Slider Controls (Prev / Next / Counter / Progress / View Toggle) -->
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-3 flex-1 min-w-[240px]">
+                        <div class="flex items-center gap-2">
+                            <button id="slider-prev"
+                                class="btn-secondary w-9 h-9 rounded-lg inline-flex items-center justify-center text-xs"
+                                aria-label="Previous project">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <button id="slider-next"
+                                class="btn-secondary w-9 h-9 rounded-lg inline-flex items-center justify-center text-xs"
+                                aria-label="Next project">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <span class="font-mono text-xs text-zinc-400">
+                            <strong id="slider-current" class="text-white">01</strong> / <span id="slider-total">17</span>
+                        </span>
+                        <div class="slider-progress-track hidden sm:block" aria-hidden="true">
+                            <div id="slider-progress-fill" class="slider-progress-fill"></div>
+                        </div>
+                        <span id="slider-active-title" class="hidden md:inline text-xs font-medium text-zinc-300 truncate max-w-[200px]">
+                            Insight Agent
+                        </span>
+                    </div>
+
+                    <div class="flex items-center gap-2.5">
+                        <button id="toggle-view-btn"
+                            class="px-3.5 py-2 rounded-lg border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 text-xs font-mono transition-colors inline-flex items-center gap-1.5"
+                            aria-label="Toggle between slider and grid view">
+                            <i class="fas fa-grip text-[11px]"></i><span>Grid View</span>
+                        </button>
+                        <button data-jump="experience"
+                            class="px-3.5 py-2 rounded-lg border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 text-xs font-mono transition-colors inline-flex items-center gap-1.5">
+                            <span>Next: Experience</span><i class="fas fa-arrow-down text-[10px]"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1225,8 +1093,9 @@
 
     </main>
 
-    <!-- GSAP 3.12.5 CDN (Core, Observer, ScrollTrigger, ScrollToPlugin) -->
+    <!-- GSAP 3.12.5 CDN (Core, Draggable, Observer, ScrollTrigger, ScrollToPlugin) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>

@@ -122,7 +122,7 @@ body {
     transform: scaleX(1);
 }
 
-/* ─── Deck Stage & Panels (Desktop GSAP Pinned Scroll-Change) ────────────── */
+/* ─── Section Panels (Desktop: Right-to-Left Layered Deck; Mobile: Vertical) ─ */
 .deck-stage {
     position: relative;
     width: 100%;
@@ -131,10 +131,24 @@ body {
 .deck-panel {
     position: relative;
     width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     background-color: var(--bg-panel);
     border-top: 1px solid var(--border-subtle);
     padding: 5.5rem 0 4rem;
+    overflow: hidden;
 }
+
+.deck-panel[data-index="0"] {
+    border-top: 0;
+    background-color: var(--bg-canvas);
+}
+.deck-panel[data-index="1"] { background-color: #101217; }
+.deck-panel[data-index="2"] { background-color: #0d0f13; }
+.deck-panel[data-index="3"] { background-color: #111319; }
+.deck-panel[data-index="4"] { background-color: #0d0f13; }
+.deck-panel[data-index="5"] { background-color: #101217; }
 
 @media (min-width: 900px) {
     .deck-stage {
@@ -147,29 +161,30 @@ body {
         inset: 0;
         height: 100vh;
         overflow-y: auto;
-        display: flex;
-        align-items: center;
         padding: 4.5rem 0 2.5rem;
         will-change: transform, opacity;
-        box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.65);
+        box-shadow: -28px 0 70px rgba(0, 0, 0, 0.72);
     }
 
-    .deck-panel.deck-panel-scroll {
+    /* Prevent flash of later panels before JS initializes (no transform here so GSAP xPercent starts at 0px) */
+    .deck-panel[data-index="0"] { z-index: 1; opacity: 1; }
+    .deck-panel[data-index="1"] { z-index: 2; opacity: 0; }
+    .deck-panel[data-index="2"] { z-index: 3; opacity: 0; }
+    .deck-panel[data-index="3"] { z-index: 4; opacity: 0; }
+    .deck-panel[data-index="4"] { z-index: 5; opacity: 0; }
+    .deck-panel[data-index="5"] { z-index: 6; opacity: 0; }
+
+    .deck-panel.deck-panel-projects {
+        overflow: hidden;
+        padding: 4.75rem 0 2.5rem;
+    }
+
+    .deck-panel.deck-panel-projects.is-grid-expanded {
         display: block;
-        padding: 5.75rem 0 5.5rem;
-        scroll-behavior: smooth;
+        overflow-y: auto !important;
+        height: 100vh !important;
+        padding: 5.5rem 0 4rem !important;
     }
-
-    .deck-panel[data-index="0"] {
-        z-index: 1;
-        border-top: 0;
-        background-color: var(--bg-canvas);
-    }
-    .deck-panel[data-index="1"] { z-index: 2; background-color: #101217; }
-    .deck-panel[data-index="2"] { z-index: 3; background-color: #0d0f13; }
-    .deck-panel[data-index="3"] { z-index: 4; background-color: #111319; }
-    .deck-panel[data-index="4"] { z-index: 5; background-color: #0d0f13; }
-    .deck-panel[data-index="5"] { z-index: 6; background-color: #101217; }
 }
 
 /* ─── Cards & Buttons ────────────────────────────────────────────────────── */
@@ -208,7 +223,7 @@ body {
 .project-preview {
     position: relative;
     overflow: hidden;
-    border-radius: 0.625rem;
+    border-radius: 0.5rem;
     border: 1px solid var(--border-subtle);
     background-color: #0b0d12;
     aspect-ratio: 16 / 9;
@@ -227,9 +242,98 @@ body {
     transform: scale(1.03);
 }
 
-.shipped-highlight-band {
-    background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 18, 22, 0.4) 100%);
-    border: 1px solid rgba(59, 130, 246, 0.25);
+/* ─── GSAP Infinite Card Slider (demos.gsap.com/demo/infinite-card-slider) ─ */
+.slider-viewport {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 0.5rem 0 0.75rem;
+    cursor: grab;
+    user-select: none;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+}
+
+.slider-viewport:active {
+    cursor: grabbing;
+}
+
+.slider-track {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    will-change: transform;
+}
+
+.slider-card {
+    width: clamp(295px, 42vw, 480px);
+    flex-shrink: 0;
+    margin-right: 1.25rem;
+    opacity: 0.58;
+    will-change: transform, opacity;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.slider-card.is-active,
+.slider-card:hover {
+    opacity: 1;
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Grid view mode when toggled */
+.slider-viewport.is-grid-view {
+    overflow: visible;
+    cursor: default;
+    mask-image: none;
+    -webkit-mask-image: none;
+}
+
+.slider-viewport.is-grid-view .slider-track {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .slider-viewport.is-grid-view .slider-track {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1180px) {
+    .slider-viewport.is-grid-view .slider-track {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.slider-viewport.is-grid-view .slider-card {
+    width: 100%;
+    margin-right: 0;
+    opacity: 1;
+}
+
+.deck-panel-projects.is-grid-expanded {
+    height: auto !important;
+    min-height: 100vh;
+    overflow: visible !important;
+    padding: 5.5rem 0 4.5rem !important;
+}
+
+.slider-progress-track {
+    flex: 1;
+    max-width: 280px;
+    height: 3px;
+    border-radius: 999px;
+    background-color: var(--border-subtle);
+    overflow: hidden;
+}
+
+.slider-progress-fill {
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+    transform: scaleX(0);
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
 }
 
 /* ─── Hero Split-Character Masked Name (GSAP.com style) ─────────────────── */
